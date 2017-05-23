@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1495474212 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\configuracion.cpp
+	"configuracion.h"
+	<iostream>
+	<fstream>
+	<stdlib.h>
+
+1495473191 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\configuracion.h
+
+1495474175 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\main.cpp
+	"configuracion.h"
+	<iostream>
+
