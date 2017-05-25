@@ -11,30 +11,32 @@
 /*--------------------------------*/
 
 /* tipo enumerado para realizar comparaciones */
+#ifndef __RESULTADOCOMPARACION__
+
 enum ResultadoComparacion {
   MAYOR,
   IGUAL,
   MENOR
 };
-
+#endif
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
 typedef puntajesPorJugador DatoPJ;
 
 /* Tipo de Estructura de los Nodos de la Lista. */
-struct NodoLista {
+struct NodoListaPJ {
     DatoPJ dato; // dato almacenado
-    NodoLista* sgte; // puntero al siguiente
+    NodoListaPJ* sgte; // puntero al siguiente
 };
 
 /* Tipo de Puntero a los Nodos de la Lista, el cual se usa para recorrer
    la Lista y acceder a sus Datos. */
-typedef NodoLista* PtrNodoListaPJ;
+typedef NodoListaPJ* PtrNodoListaPJ;
 
 
 /* Tipo de Estructura de la Lista */
-struct listaClubes{
+struct listaPJ{
     PtrNodoListaPJ primero;      // puntero al primer nodo de la lista
 };
 
@@ -49,7 +51,7 @@ struct listaClubes{
 
   lista : estructura de datos a ser creado.
 */
-void crearLista(listaClubes &lista);
+void crearLista(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -58,7 +60,7 @@ void crearLista(listaClubes &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-bool listaVacia(listaClubes &lista);
+bool listaVacia(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -69,7 +71,7 @@ bool listaVacia(listaClubes &lista);
 
   return representación del fin de la lista.
 */
-PtrNodoListaPJ fin();
+PtrNodoListaPJ finPJ();
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -80,7 +82,7 @@ PtrNodoListaPJ fin();
   lista : lista sobre la cual se invoca la primitiva.
   return puntero al primer nodo.
 */
-PtrNodoListaPJ primero(listaClubes &lista);
+PtrNodoListaPJ primero(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -92,7 +94,7 @@ PtrNodoListaPJ primero(listaClubes &lista);
   prtNodo : puntero al nodo a partir del cual se requiere el siguiente.
   return puntero al nodo siguiente.
 */
-PtrNodoListaPJ siguiente(listaClubes &lista, PtrNodoListaPJ ptrNodo);
+PtrNodoListaPJ siguiente(listaPJ &lista, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -105,7 +107,7 @@ PtrNodoListaPJ siguiente(listaClubes &lista, PtrNodoListaPJ ptrNodo);
   prtNodo : puntero al nodo a partir del cual se requiere el anterior.
   return puntero al nodo anterior.
 */
-PtrNodoListaPJ anterior(listaClubes &lista, PtrNodoListaPJ ptrNodo);
+PtrNodoListaPJ anterior(listaPJ &lista, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -116,7 +118,7 @@ PtrNodoListaPJ anterior(listaClubes &lista, PtrNodoListaPJ ptrNodo);
   lista : lista sobre la cual se invoca la primitiva.
   return puntero al último nodo.
 */
-PtrNodoListaPJ ultimo(listaClubes &lista);
+PtrNodoListaPJ ultimo(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -128,7 +130,7 @@ PtrNodoListaPJ ultimo(listaClubes &lista);
   dato : elemento a adicionar al principio de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoListaPJ adicionarPrincipio(listaClubes &lista, DatoPJ dato);
+PtrNodoListaPJ adicionarPrincipio(listaPJ &lista, DatoPJ dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -144,7 +146,7 @@ PtrNodoListaPJ adicionarPrincipio(listaClubes &lista, DatoPJ dato);
   ptrNodo : puntero al nodo después del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoListaPJ adicionarDespues(listaClubes &lista, DatoPJ dato, PtrNodoListaPJ ptrNodo);
+PtrNodoListaPJ adicionarDespues(listaPJ &lista, DatoPJ dato, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -156,7 +158,7 @@ PtrNodoListaPJ adicionarDespues(listaClubes &lista, DatoPJ dato, PtrNodoListaPJ 
   dato : elemento a adicionar al final de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoListaPJ adicionarFinal(listaClubes &lista, DatoPJ dato);
+PtrNodoListaPJ adicionarFinal(listaPJ &lista, DatoPJ dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -171,7 +173,7 @@ PtrNodoListaPJ adicionarFinal(listaClubes &lista, DatoPJ dato);
   ptrNodo : puntero al nodo antes del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoListaPJ adicionarAntes(listaClubes &lista, DatoPJ dato, PtrNodoListaPJ ptrNodo);
+PtrNodoListaPJ adicionarAntes(listaPJ &lista, DatoPJ dato, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -182,7 +184,7 @@ PtrNodoListaPJ adicionarAntes(listaClubes &lista, DatoPJ dato, PtrNodoListaPJ pt
   dato : elemento a colocar.
   ptrNodo : puntero al nodo del cual se quiere colocar el dato.
 */
-void colocarDato(listaClubes &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
+void colocarDato(listaPJ &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -193,7 +195,7 @@ void colocarDato(listaClubes &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
   dato : elemento obtenido.
   ptrNodo : puntero al nodo del cual se quiere obtener el dato.
 */
-void obtenerDato(listaClubes &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
+void obtenerDato(listaPJ &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -204,7 +206,7 @@ void obtenerDato(listaClubes &lista, DatoPJ &dato, PtrNodoListaPJ ptrNodo);
   lista : lista sobre la cual se invoca la primitiva.
   ptrNodo : puntero al nodo que se desea eliminar.
 */
-void eliminarNodo(listaClubes &lista, PtrNodoListaPJ ptrNodo);
+void eliminarNodo(listaPJ &lista, PtrNodoListaPJ ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -214,7 +216,7 @@ void eliminarNodo(listaClubes &lista, PtrNodoListaPJ ptrNodo);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarNodoPrimero(listaClubes &lista);
+void eliminarNodoPrimero(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -224,7 +226,7 @@ void eliminarNodoPrimero(listaClubes &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarNodoUltimo(listaClubes &lista);
+void eliminarNodoUltimo(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -234,7 +236,7 @@ void eliminarNodoUltimo(listaClubes &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarLista(listaClubes &lista);
+void eliminarLista(listaPJ &lista);
 
 
 /******************************************************************************/
@@ -250,7 +252,7 @@ void eliminarLista(listaClubes &lista);
   dato : elemento a localizar.
   return puntero al nodo localizado o fin().
 */
-PtrNodoListaPJ localizarDato(listaClubes &lista , DatoPJ dato);
+PtrNodoListaPJ localizarDato(listaPJ &lista , DatoPJ dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -263,7 +265,7 @@ PtrNodoListaPJ localizarDato(listaClubes &lista , DatoPJ dato);
   dato : elemento a insertar.
   return puntero al nodo insertado.
 */
-PtrNodoListaPJ insertarDato(listaClubes &lista, DatoPJ dato);
+PtrNodoListaPJ insertarDato(listaPJ &lista, DatoPJ dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -273,7 +275,7 @@ PtrNodoListaPJ insertarDato(listaClubes &lista, DatoPJ dato);
   lista : lista sobre la cual se invoca la primitiva.
   dato : elemento a eliminar.
 */
-void eliminarDato(listaClubes &lista, DatoPJ dato);
+void eliminarDato(listaPJ &lista, DatoPJ dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -282,7 +284,7 @@ void eliminarDato(listaClubes &lista, DatoPJ dato);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void reordenar(listaClubes &lista);
+void reordenar(listaPJ &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -291,7 +293,7 @@ void reordenar(listaClubes &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-int longitud(listaClubes &lista);
+int longitud(listaPJ &lista);
 
 #endif
 

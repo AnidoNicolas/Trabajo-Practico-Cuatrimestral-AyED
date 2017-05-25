@@ -8,6 +8,8 @@
 /******************************************************************************/
 /* Definiciones de Tipos de Datos */
 /*--------------------------------*/
+#ifndef __RESULTADOCOMPARACION__
+#define __RESULTADOCOMPARACION__
 
 /* tipo enumerado para realizar comparaciones */
 enum ResultadoComparacion {
@@ -15,21 +17,21 @@ enum ResultadoComparacion {
   IGUAL,
   MENOR
 };
-
+#endif // __RESULTADOCOMPARACION__
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
 typedef club DatoCl;
 
 /* Tipo de Estructura de los Nodos de la Lista. */
-struct NodoLista {
+struct NodoListaCl {
     DatoCl dato; // dato almacenado
-    NodoLista* sgte; // puntero al siguiente
+    NodoListaCl* sgte; // puntero al siguiente
 };
 
 /* Tipo de Puntero a los Nodos de la Lista, el cual se usa para recorrer
    la Lista y acceder a sus Datos. */
-typedef NodoLista* PtrNodoListaCl;
+typedef NodoListaCl* PtrNodoListaCl;
 
 
 /* Tipo de Estructura de la Lista */

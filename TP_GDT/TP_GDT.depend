@@ -22,10 +22,10 @@
 
 1495473191 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\configuracion.h
 
-1495716835 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.cpp
+1495733361 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.cpp
 	"equipo.h"
 
-1495717045 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.h
+1495730197 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.h
 	"listaJugadores.h"
 
 1495714632 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.h
@@ -33,20 +33,22 @@
 1495681520 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.cpp
 	"jugador.h"
 
-1495721502 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\main.cpp
+1495745754 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\main.cpp
 	"configuracion.h"
-	"equipo.h"
+	"listaClubes.h"
 	"listaJugadores.h"
 	"listaEquipos.h"
+	"listaPuntajesPorJugador.h"
+	"funciones.h"
 	<iostream>
 
-1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.cpp
+1495744336 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.cpp
 	"listaJugadores.h"
 
-1495720066 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.h
+1495744316 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.h
 	"jugador.h"
 
-1495721375 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaequipos.cpp
+1495740561 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaequipos.cpp
 	"listaEquipos.h"
 
 1495720833 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaequipos.h
@@ -74,4 +76,36 @@
 
 1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listajugadores.cpp
 	"listaJugadores.h"
+
+1495733135 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.cpp
+	"funciones.h"
+	"listaEquipos.h"
+	<fstream>
+	<iostream>
+	<stdlib.h>
+
+1495726735 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.h
+	"listaEquipos.h"
+
+1495744509 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listapuntajesporjugador.cpp
+	"listaPuntajesPorJugador.h"
+
+1495744920 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listapuntajesporjugador.h
+	"puntajesPorJugador.h"
+
+1495733706 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\puntajesporjugador.h
+
+1495733706 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\puntajesporjugador.cpp
+	"puntajesPorJugador.h"
+
+1495737845 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\club.cpp
+	"club.h"
+
+1495737845 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\club.h
+
+1495745707 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.cpp
+	"listaClubes.h"
+
+1495745541 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.h
+	"club.h"
 

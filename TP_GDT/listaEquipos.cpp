@@ -57,9 +57,12 @@ bool listaVaciaEquipo(ListaEquipo &lista) {
 }
 
 /*----------------------------------------------------------------------------*/
+
 PtrNodoListaEquipo finEquipo() {
   return NULL;
 }
+
+
 
 /*----------------------------------------------------------------------------*/
 PtrNodoListaEquipo primeroEquipo(ListaEquipo &lista) {

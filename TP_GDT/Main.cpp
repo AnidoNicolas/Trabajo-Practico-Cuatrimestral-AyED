@@ -1,6 +1,9 @@
 #include "configuracion.h"
+#include "listaClubes.h"
 #include "listaJugadores.h"
 #include "listaEquipos.h"
+#include "listaPuntajesPorJugador.h"
+#include "funciones.h"
 
 #include <iostream>
 
@@ -15,20 +18,20 @@ setConfiguracion(config);
 //cout << getValorMaximoXEquipo(config)<<endl<<getARQ(config)<<endl<<getDEF(config)<<endl<<getMED(config)<<endl<<getDEL(config)<<endl
 ListaEquipo equipos;
 crearListaEquipo(equipos);
+//cargarEquipos
 
-Equipo losPirulos;
-crear(losPirulos);
 
-adicionarFinalEquipo(equipos,losPirulos);
+
+
 
 Jugador pepe;
 crear(pepe);
 char nomb[5]="pepe";
 setNombre(pepe,nomb);
 
-adicionarFinal(losPirulos.jugadores,pepe);
+//adicionarFinal(losPirulos.jugadores,pepe);
 
-cout << equipos.primeroEquipo->dato.id<<" " << getNombre(losPirulos)<<" " << getNombreUsuario(losPirulos)<<" "<<getJugadores(losPirulos).primero->dato.nombre;
+//cout << equipos.primeroEquipo->dato.id<<" " << getNombre(losPirulos)<<" " << getNombreUsuario(losPirulos)<<" "<<getJugadores(losPirulos).primero->dato.nombre;
 
 
 }

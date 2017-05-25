@@ -34,3 +34,15 @@ int getPuntajeFecha(Equipo &equipo){
 int getPuntajeTotal(Equipo &equipo){
     return equipo.puntajeTotal;
 }
+
+void setId(Equipo &equipo,int id){
+    equipo.id=id;
+}
+
+void setNombre (Equipo &equipo, char*nombre){
+    equipo.nombreUsuario=nombre;
+}
+
+void setNombreUsuario (Equipo &equipo, char*nombre){
+    equipo.nombre=nombre;
+}

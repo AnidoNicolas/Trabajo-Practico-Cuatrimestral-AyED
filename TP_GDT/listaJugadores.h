@@ -75,7 +75,7 @@ bool listaVacia(ListaJugador &lista);
 
   return representación del fin de la lista.
 */
-PtrNodoLista fin();
+PtrNodoLista finJugadores();
 
 /*----------------------------------------------------------------------------*/
 /*

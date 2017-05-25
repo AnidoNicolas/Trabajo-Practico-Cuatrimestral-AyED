@@ -32,4 +32,10 @@ int getPuntajeFecha(Equipo &equipo);
 
 int getPuntajeTotal(Equipo &equipo);
 
+void setId(Equipo &equipo,int id);
+
+void setNombre (Equipo &equipo, char*nombre);
+
+void setNombreUsuario (Equipo &equipo, char*nombre);
+
 #endif // __EQUIPOS_H__

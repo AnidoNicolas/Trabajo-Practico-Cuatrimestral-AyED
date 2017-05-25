@@ -98,7 +98,7 @@ PtrNodoListaCl ultimo(listaClubes &lista) {
 PtrNodoListaCl crearNodoLista(DatoCl dato) {
 
   /* reserva memoria para el nodo y luego completa sus datos */
-  PtrNodoListaCl ptrAux = new NodoLista;
+  PtrNodoListaCl ptrAux = new NodoListaCl;
 
   ptrAux->dato = dato;
   ptrAux->sgte = fin();

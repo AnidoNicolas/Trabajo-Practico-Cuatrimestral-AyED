@@ -32,16 +32,26 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="Main.cpp" />
+		<Unit filename="club.cpp" />
+		<Unit filename="club.h" />
 		<Unit filename="configuracion.cpp" />
 		<Unit filename="configuracion.h" />
 		<Unit filename="equipo.cpp" />
 		<Unit filename="equipo.h" />
+		<Unit filename="funciones.cpp" />
+		<Unit filename="funciones.h" />
 		<Unit filename="jugador.cpp" />
 		<Unit filename="jugador.h" />
+		<Unit filename="listaClubes.cpp" />
+		<Unit filename="listaClubes.h" />
 		<Unit filename="listaEquipos.cpp" />
 		<Unit filename="listaEquipos.h" />
 		<Unit filename="listaJugadores.cpp" />
 		<Unit filename="listaJugadores.h" />
+		<Unit filename="listaPuntajesPorJugador.cpp" />
+		<Unit filename="listaPuntajesPorJugador.h" />
+		<Unit filename="puntajesPorJugador.cpp" />
+		<Unit filename="puntajesPorJugador.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
