@@ -1,10 +1,3 @@
-/* TDA Lista
- * Implementación Simplemente Enlazada
- * Archivo : Lista.cpp
- * Versión : 1.1
- */
-
-
 #include "listaPuntajesPorJugador.h"
 
 /******************************************************************************/

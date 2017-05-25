@@ -1,9 +1,10 @@
+#include "funciones.h"
 #include "configuracion.h"
 #include "listaClubes.h"
 #include "listaJugadores.h"
 #include "listaEquipos.h"
 #include "listaPuntajesPorJugador.h"
-#include "funciones.h"
+
 
 #include <iostream>
 
@@ -18,8 +19,8 @@ setConfiguracion(config);
 //cout << getValorMaximoXEquipo(config)<<endl<<getARQ(config)<<endl<<getDEF(config)<<endl<<getMED(config)<<endl<<getDEL(config)<<endl
 ListaEquipo equipos;
 crearListaEquipo(equipos);
-//cargarEquipos
-
+cargarEquipos(equipos);
+recorrerEquipo(equipos);
 
 
 

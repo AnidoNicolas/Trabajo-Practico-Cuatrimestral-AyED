@@ -1,9 +1,3 @@
-/* TDA Lista Clubes
- * Implementación Simplemente Enlazada
- * Archivo : ListaClubes.cpp*/
-
-
-
 #include "listaClubes.h"
 
 /******************************************************************************/
