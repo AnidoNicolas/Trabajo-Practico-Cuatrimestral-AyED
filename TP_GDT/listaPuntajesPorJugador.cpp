@@ -1,14 +1,14 @@
-/* TDA Lista
- * Implementación Simplemente Enlazada
- * Archivo : Lista.cpp
- * Versión : 1.1
+/* TDA Lista Puntajes Por Jugador
+ * ImplementaciÃ³n Simplemente Enlazada
+ * Archivo : listaPuntajesPorJugador.cpp
+ * VersiÃ³n : 1.1
  */
 
 
 #include "listaPuntajesPorJugador.h"
 
 /******************************************************************************/
-/* Definición de Tipos de Datos para manejo interno */
+/* DefiniciÃ³n de Tipos de Datos para manejo interno */
 /*--------------------------------------------------*/
 
 
@@ -42,7 +42,7 @@ ResultadoComparacion compararDato(Dato dato1, Dato dato2) {
 
 
 /******************************************************************************/
-/* Implementación de Primitivas */
+/* ImplementaciÃ³n de Primitivas */
 /*------------------------------*/
 
 void crearLista(listaPuntajesPorJugador &lista) {
@@ -68,7 +68,7 @@ PtrNodoLista primero(listaPuntajesPorJugador &lista) {
 /*----------------------------------------------------------------------------*/
 PtrNodoLista siguiente(listaPuntajesPorJugador&lista, PtrNodoLista ptrNodo) {
 
-  /* verifica si la lista está vacia o si ptrNodo es el último */
+  /* verifica si la lista estÃ¡ vacia o si ptrNodo es el Ãºltimo */
   if ((! listaVacia(lista)) && (ptrNodo != fin()))
     return ptrNodo->sgte;
   else
@@ -91,7 +91,7 @@ PtrNodoLista anterior(listaPuntajesPorJugador &lista, PtrNodoLista ptrNodo) {
 /*----------------------------------------------------------------------------*/
 PtrNodoLista ultimo(listaPuntajesPorJugador &lista) {
 
-  /* el último nodo de la lista es el anterior al fin() */
+  /* el Ãºltimo nodo de la lista es el anterior al fin() */
   return anterior(lista,fin());
 }
 
@@ -125,7 +125,7 @@ PtrNodoLista adicionarDespues(listaPuntajesPorJugador &lista, Dato dato, PtrNodo
 
   PtrNodoLista ptrNuevoNodo = fin();
 
-  /* si la lista está vacia se adiciona la principio */
+  /* si la lista estÃ¡ vacia se adiciona la principio */
   if (listaVacia(lista))
     ptrNuevoNodo = adicionarPrincipio(lista,dato);
 
@@ -145,7 +145,7 @@ PtrNodoLista adicionarDespues(listaPuntajesPorJugador &lista, Dato dato, PtrNodo
 /*----------------------------------------------------------------------------*/
 PtrNodoLista adicionarFinal(listaPuntajesPorJugador &lista, Dato dato) {
 
-  /* adiciona el dato después del último nodo de la lista */
+  /* adiciona el dato despuÃ©s del Ãºltimo nodo de la lista */
   return adicionarDespues(lista,dato,ultimo(lista));
 }
 
@@ -182,7 +182,7 @@ void eliminarNodo(listaPuntajesPorJugador &lista, PtrNodoLista ptrNodo) {
 
   PtrNodoLista ptrPrevio;
 
-  /* verifica que la lista no esté vacia y que nodo no sea fin*/
+  /* verifica que la lista no estÃ© vacia y que nodo no sea fin*/
   if ((! listaVacia(lista)) && (ptrNodo != fin())) {
 
     if (ptrNodo == primero(lista))
@@ -192,7 +192,7 @@ void eliminarNodo(listaPuntajesPorJugador &lista, PtrNodoLista ptrNodo) {
       ptrPrevio = anterior( lista , ptrNodo );
       ptrPrevio->sgte = ptrNodo->sgte;
     }
-    // Si el dato es un TDA, acá habría que llamar al destructor.
+    // Si el dato es un TDA, acÃ¡ habrÃ­a que llamar al destructor.
 
     delete ptrNodo;
   }
@@ -227,7 +227,7 @@ PtrNodoLista localizarDato(listaPuntajesPorJugador &lista, Dato dato) {
    Dato datoCursor;
    PtrNodoLista ptrCursor = primero(lista);
 
-  /* recorre los nodos hasta llegar al último o hasta
+  /* recorre los nodos hasta llegar al Ãºltimo o hasta
      encontrar el nodo buscado */
   while ((ptrCursor != fin()) && (! encontrado)) {
 
@@ -239,7 +239,7 @@ PtrNodoLista localizarDato(listaPuntajesPorJugador &lista, Dato dato) {
       ptrCursor = siguiente(lista,ptrCursor);
   }
 
-  /* si no lo encontró devuelve fin */
+  /* si no lo encontrÃ³ devuelve fin */
   if (! encontrado)
     ptrCursor = fin();
 
@@ -264,7 +264,7 @@ PtrNodoLista insertarDato(listaPuntajesPorJugador &lista, Dato dato) {
   Dato datoCursor;
   bool ubicado = false;
 
-  /* recorre la lista buscando el lugar de la inserción */
+  /* recorre la lista buscando el lugar de la inserciÃ³n */
   while ((ptrCursor != fin()) && (! ubicado)) {
 
     obtenerDato(lista,datoCursor,ptrCursor);
