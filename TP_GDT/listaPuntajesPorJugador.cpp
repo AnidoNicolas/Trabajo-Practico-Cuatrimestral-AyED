@@ -1,7 +1,6 @@
 /* TDA Lista Puntajes Por Jugador
  * Implementación Simplemente Enlazada
  * Archivo : listaPuntajesPorJugador.cpp
- * Versión : 1.1
  */
 
 
