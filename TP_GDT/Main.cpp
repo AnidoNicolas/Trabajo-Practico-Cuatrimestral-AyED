@@ -1,4 +1,7 @@
 #include "configuracion.h"
+#include "listaJugadores.h"
+#include "listaEquipos.h"
+
 #include <iostream>
 
 using namespace std;
@@ -9,6 +12,24 @@ Configuracion config;
 crear(config);
 setConfiguracion(config);
 // verifico q se setearon los valores mostrandolos por pantalla
-//cout << getValorMaximoXEquipo(config)<<endl<<getARQ(config)<<endl<<getDEF(config)<<endl<<getMED(config)<<endl<<getDEL(config)<<endl;
+//cout << getValorMaximoXEquipo(config)<<endl<<getARQ(config)<<endl<<getDEF(config)<<endl<<getMED(config)<<endl<<getDEL(config)<<endl
+ListaEquipo equipos;
+crearListaEquipo(equipos);
+
+Equipo losPirulos;
+crear(losPirulos);
+
+adicionarFinalEquipo(equipos,losPirulos);
+
+Jugador pepe;
+crear(pepe);
+char nomb[5]="pepe";
+setNombre(pepe,nomb);
+
+adicionarFinal(losPirulos.jugadores,pepe);
+
+cout << equipos.primeroEquipo->dato.id<<" " << getNombre(losPirulos)<<" " << getNombreUsuario(losPirulos)<<" "<<getJugadores(losPirulos).primero->dato.nombre;
+
 
 }
+

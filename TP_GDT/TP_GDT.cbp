@@ -34,6 +34,14 @@
 		<Unit filename="Main.cpp" />
 		<Unit filename="configuracion.cpp" />
 		<Unit filename="configuracion.h" />
+		<Unit filename="equipo.cpp" />
+		<Unit filename="equipo.h" />
+		<Unit filename="jugador.cpp" />
+		<Unit filename="jugador.h" />
+		<Unit filename="listaEquipos.cpp" />
+		<Unit filename="listaEquipos.h" />
+		<Unit filename="listaJugadores.cpp" />
+		<Unit filename="listaJugadores.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

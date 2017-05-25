@@ -7,7 +7,71 @@
 
 1495473191 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\configuracion.h
 
-1495474175 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\main.cpp
+1495721502 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\main.cpp
+	"configuracion.h"
+	"equipo.h"
+	"listaJugadores.h"
+	"listaEquipos.h"
+	<iostream>
+
+1495474212 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\configuracion.cpp
 	"configuracion.h"
 	<iostream>
+	<fstream>
+	<stdlib.h>
+
+1495473191 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\configuracion.h
+
+1495716835 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.cpp
+	"equipo.h"
+
+1495717045 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.h
+	"listaJugadores.h"
+
+1495714632 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.h
+
+1495681520 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.cpp
+	"jugador.h"
+
+1495721502 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\main.cpp
+	"configuracion.h"
+	"equipo.h"
+	"listaJugadores.h"
+	"listaEquipos.h"
+	<iostream>
+
+1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.cpp
+	"listaJugadores.h"
+
+1495720066 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listajugadores.h
+	"jugador.h"
+
+1495721375 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaequipos.cpp
+	"listaEquipos.h"
+
+1495720833 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaequipos.h
+	"equipo.h"
+
+1495716835 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\equipo.cpp
+	"equipo.h"
+
+1495717045 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\equipo.h
+	"listaJugadores.h"
+
+1495720066 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listajugadores.h
+	"jugador.h"
+
+1495714632 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\jugador.h
+
+1495681520 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\jugador.cpp
+	"jugador.h"
+
+1495721375 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listaequipos.cpp
+	"listaEquipos.h"
+
+1495720833 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listaequipos.h
+	"equipo.h"
+
+1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listajugadores.cpp
+	"listaJugadores.h"
 
