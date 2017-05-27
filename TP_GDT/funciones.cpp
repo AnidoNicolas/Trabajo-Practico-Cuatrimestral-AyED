@@ -35,9 +35,60 @@ void recorrerEquipo (ListaEquipo &lista){
 
     while (cursor!= finEquipo()){
         obtenerDatoEquipo(lista, dato, cursor);
-        cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario << endl;
+        cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario <<" "<<dato.puntajeFecha << endl;
         cursor= siguienteEquipo(lista,cursor);
     }
 }
+
+void ordenarEquiposPorAtrivuto(ListaEquipo &lista,AtrivutoComparacion atrivuto){
+  //  void intercambiarEquipo(PtrNodoListaEquipo cursor);
+ PtrNodoListaEquipo cursor=primeroEquipo(lista);
+  Equipo equipo;
+  int i,j;
+  for(i=2;i<=longitudEquipo(lista);i++){
+    for(j=1;j<=longitudEquipo(lista)-1;j++){
+        //if(getPuntajeFecha(cursor->dato)<getPuntajeFecha(cursor->sgte->dato) ){
+        switch(atrivuto){
+            case ID:
+                if(compararDatoEquipo(cursor->dato,siguienteEquipo(lista,cursor)->dato,ID) == MENOR){
+                    equipo=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=equipo;
+                   // intercambiar(cursor);
+                }
+                break;
+            case FECHA:
+                if(compararDatoEquipo(cursor->dato,siguienteEquipo(lista,cursor)->dato,FECHA) == MENOR){
+                    equipo=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=equipo;
+
+                   // intercambiar(cursor);
+                }
+                break;
+            case TOTAL:
+                if(compararDatoEquipo(cursor->dato,siguienteEquipo(lista,cursor)->dato,TOTAL) == MENOR){
+                    equipo=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=equipo;
+
+                 //   intercambiar(cursor);
+                }
+                break;
+            }
+            cursor=siguienteEquipo(lista,cursor);
+        }
+        cursor=primeroEquipo(lista);
+    }
+/*
+void intercambiarEquipo(cursor){
+    Equipo equipo;
+    equipo=cursor->dato;
+    cursor->dato=cursor->sgte->dato;
+    cursor->sgte->dato=equipo;
+}
+*/
+}
+
 
 

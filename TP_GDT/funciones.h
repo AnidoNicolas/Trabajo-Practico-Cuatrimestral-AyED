@@ -7,4 +7,8 @@ void cargarEquipos(ListaEquipo &lista);
 
 void recorrerEquipo (ListaEquipo &lista);
 
+void ordenarEquiposPorAtrivuto(ListaEquipo &lista, AtrivutoComparacion atrivuto);
+
+void intercambiarEquipo(PtrNodoListaEquipo cursor);
+
 #endif // __FUNCIONES_H__

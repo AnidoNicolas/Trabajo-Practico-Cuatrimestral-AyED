@@ -18,7 +18,13 @@ enum ResultadoComparacion {
   IGUAL,
   MENOR
 };
+
 #endif // __RESULTADOCOMPARACION__
+enum AtrivutoComparacion{
+ID,
+FECHA,
+TOTAL
+};
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
@@ -294,4 +300,6 @@ void reordenarEquipo(ListaEquipo &lista);
   lista : lista sobre la cual se invoca la primitiva.
 */
 int longitudEquipo(ListaEquipo &lista);
+
+ResultadoComparacion compararDatoEquipo(DatoEquipo dato1, DatoEquipo dato2, AtrivutoComparacion atrivuto);
 #endif // __LISTAEQUIPOS_H__

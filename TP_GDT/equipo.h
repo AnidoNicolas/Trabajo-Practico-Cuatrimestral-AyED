@@ -38,4 +38,5 @@ void setNombre (Equipo &equipo, char*nombre);
 
 void setNombreUsuario (Equipo &equipo, char*nombre);
 
+void setPuntajeFecha(Equipo &equipo,int puntaje);
 #endif // __EQUIPOS_H__

@@ -46,3 +46,7 @@ void setNombre (Equipo &equipo, char*nombre){
 void setNombreUsuario (Equipo &equipo, char*nombre){
     equipo.nombre=nombre;
 }
+
+void setPuntajeFecha(Equipo &equipo,int puntaje){
+    equipo.puntajeFecha=puntaje;
+}

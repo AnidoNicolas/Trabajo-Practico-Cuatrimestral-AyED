@@ -21,7 +21,12 @@ ListaEquipo equipos;
 crearListaEquipo(equipos);
 cargarEquipos(equipos);
 recorrerEquipo(equipos);
-
+cout<<endl;
+setPuntajeFecha(equipos.primeroEquipo->dato,5);
+setPuntajeFecha(equipos.primeroEquipo->sgte->dato,10);
+setPuntajeFecha(equipos.primeroEquipo->sgte->sgte->dato,15);
+ordenarEquiposPorAtrivuto(equipos,FECHA);
+recorrerEquipo(equipos);
 
 
 
