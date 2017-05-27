@@ -16,23 +16,23 @@ enum ResultadoComparacion {
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
-typedef jugadoresPorEquipo Dato;
+typedef JugadoresPorEquipo DatoJxE;
 
 
 /* Tipo de Estructura de los Nodos de la Lista. */
-struct NodoLista {
-    Dato dato; // dato almacenado
-    NodoLista* sgte; // puntero al siguiente
+struct NodoListaJxE {
+    DatoJxE dato; // dato almacenado
+    NodoListaJxE* sgte; // puntero al siguiente
 };
 
 /* Tipo de Puntero a los Nodos de la Lista, el cual se usa para recorrer
    la Lista y acceder a sus Datos. */
-typedef NodoLista* PtrNodoListaJxE;
+typedef NodoListaJxE* PtrNodoListaJxE;
 
 
 
 /* Tipo de Estructura de la Lista */
-struct ListaJugadoresPorEquipo{
+struct listaJxE{
     PtrNodoListaJxE primero;      // puntero al primer nodo de la lista
 };
 
@@ -47,7 +47,7 @@ struct ListaJugadoresPorEquipo{
 
   lista : estructura de datos a ser creado.
 */
-void crearLista(ListaJugadoresPorEquipo &lista);
+void crearLista(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -56,7 +56,7 @@ void crearLista(ListaJugadoresPorEquipo &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-bool listaVacia(ListaJugadoresPorEquipo &lista);
+bool listaVacia(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -67,7 +67,7 @@ bool listaVacia(ListaJugadoresPorEquipo &lista);
 
   return representación del fin de la lista.
 */
-PtrNodoListaJxE finJugadoresPorEquipo();
+PtrNodoListaJxE finJxE();
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -78,7 +78,7 @@ PtrNodoListaJxE finJugadoresPorEquipo();
   lista : lista sobre la cual se invoca la primitiva.
   return puntero al primer nodo.
 */
-PtrNodoListaJxE primero(ListaJugadoresPorEquipo &lista);
+PtrNodoListaJxE primero(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -90,7 +90,7 @@ PtrNodoListaJxE primero(ListaJugadoresPorEquipo &lista);
   prtNodo : puntero al nodo a partir del cual se requiere el siguiente.
   return puntero al nodo siguiente.
 */
-PtrNodoListaJxE siguiente(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNodo);
+PtrNodoListaJxE siguiente(listaJxE &lista, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -103,7 +103,7 @@ PtrNodoListaJxE siguiente(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNod
   prtNodo : puntero al nodo a partir del cual se requiere el anterior.
   return puntero al nodo anterior.
 */
-PtrNodoListaJxE anterior(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNodo);
+PtrNodoListaJxE anterior(listaJxE &lista, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -114,7 +114,7 @@ PtrNodoListaJxE anterior(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNodo
   lista : lista sobre la cual se invoca la primitiva.
   return puntero al último nodo.
 */
-PtrNodoListaJxE ultimo(ListaJugadoresPorEquipo &lista);
+PtrNodoListaJxE ultimo(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -126,7 +126,7 @@ PtrNodoListaJxE ultimo(ListaJugadoresPorEquipo &lista);
   dato : elemento a adicionar al principio de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoListaJxE adicionarPrincipio(ListaJugadoresPorEquipo &lista, Dato dato);
+PtrNodoListaJxE adicionarPrincipio(listaJxE &lista, DatoJxE dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -142,7 +142,7 @@ PtrNodoListaJxE adicionarPrincipio(ListaJugadoresPorEquipo &lista, Dato dato);
   ptrNodo : puntero al nodo después del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoListaJxE adicionarDespues(ListaJugadoresPorEquipo &lista, Dato dato, PtrNodoListaJxE ptrNodo);
+PtrNodoListaJxE adicionarDespues(listaJxE &lista, DatoJxE dato, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -154,7 +154,7 @@ PtrNodoListaJxE adicionarDespues(ListaJugadoresPorEquipo &lista, Dato dato, PtrN
   dato : elemento a adicionar al final de la lista.
   return puntero al nodo adicionado.
 */
-PtrNodoListaJxE adicionarFinal(ListaJugadoresPorEquipo &lista, Dato dato);
+PtrNodoListaJxE adicionarFinal(listaJxE &lista, DatoJxE dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -169,7 +169,7 @@ PtrNodoListaJxE adicionarFinal(ListaJugadoresPorEquipo &lista, Dato dato);
   ptrNodo : puntero al nodo antes del cual se quiere adicionar el dato.
   return puntero al nodo adicionado.
 */
-PtrNodoListaJxE adicionarAntes(ListaJugadoresPorEquipo &lista, Dato dato, PtrNodoListaJxE ptrNodo);
+PtrNodoListaJxE adicionarAntes(listaJxE &lista, DatoJxE dato, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -180,7 +180,7 @@ PtrNodoListaJxE adicionarAntes(ListaJugadoresPorEquipo &lista, Dato dato, PtrNod
   dato : elemento a colocar.
   ptrNodo : puntero al nodo del cual se quiere colocar el dato.
 */
-void colocarDato(ListaJugadoresPorEquipo &lista, Dato &dato, PtrNodoListaJxE ptrNodo);
+void colocarDato(listaJxE &lista, DatoJxE &dato, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -191,7 +191,7 @@ void colocarDato(ListaJugadoresPorEquipo &lista, Dato &dato, PtrNodoListaJxE ptr
   dato : elemento obtenido.
   ptrNodo : puntero al nodo del cual se quiere obtener el dato.
 */
-void obtenerDato(ListaJugadoresPorEquipo &lista, Dato &dato, PtrNodoListaJxE ptrNodo);
+void obtenerDato(listaJxE &lista, DatoJxE &dato, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -202,7 +202,7 @@ void obtenerDato(ListaJugadoresPorEquipo &lista, Dato &dato, PtrNodoListaJxE ptr
   lista : lista sobre la cual se invoca la primitiva.
   ptrNodo : puntero al nodo que se desea eliminar.
 */
-void eliminarNodo(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNodo);
+void eliminarNodo(listaJxE &lista, PtrNodoListaJxE ptrNodo);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -212,7 +212,7 @@ void eliminarNodo(ListaJugadoresPorEquipo &lista, PtrNodoListaJxE ptrNodo);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarNodoPrimero(ListaJugadoresPorEquipo &lista);
+void eliminarNodoPrimero(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -222,7 +222,7 @@ void eliminarNodoPrimero(ListaJugadoresPorEquipo &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarNodoUltimo(ListaJugadoresPorEquipo &lista);
+void eliminarNodoUltimo(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -232,7 +232,7 @@ void eliminarNodoUltimo(ListaJugadoresPorEquipo &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void eliminarLista(ListaJugadoresPorEquipo &lista);
+void eliminarLista(listaJxE &lista);
 
 
 /******************************************************************************/
@@ -248,7 +248,7 @@ void eliminarLista(ListaJugadoresPorEquipo &lista);
   dato : elemento a localizar.
   return puntero al nodo localizado o fin().
 */
-PtrNodoListaJxE localizarDato(ListaJugadoresPorEquipo &lista , Dato dato);
+PtrNodoListaJxE localizarDato(listaJxE &lista , DatoJxE dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -261,7 +261,7 @@ PtrNodoListaJxE localizarDato(ListaJugadoresPorEquipo &lista , Dato dato);
   dato : elemento a insertar.
   return puntero al nodo insertado.
 */
-PtrNodoListaJxE insertarDato(ListaJugadoresPorEquipo &lista, Dato dato);
+PtrNodoListaJxE insertarDato(listaJxE &lista, DatoJxE dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -271,7 +271,7 @@ PtrNodoListaJxE insertarDato(ListaJugadoresPorEquipo &lista, Dato dato);
   lista : lista sobre la cual se invoca la primitiva.
   dato : elemento a eliminar.
 */
-void eliminarDato(ListaJugadoresPorEquipo &lista, Dato dato);
+void eliminarDato(listaJxE &lista, DatoJxE dato);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -280,7 +280,7 @@ void eliminarDato(ListaJugadoresPorEquipo &lista, Dato dato);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-void reordenar(ListaJugadoresPorEquipo &lista);
+void reordenar(listaJxE &lista);
 
 /*----------------------------------------------------------------------------*/
 /*
@@ -289,6 +289,6 @@ void reordenar(ListaJugadoresPorEquipo &lista);
 
   lista : lista sobre la cual se invoca la primitiva.
 */
-int longitud(ListaJugadoresPorEquipo &lista);
+int longitud(listaJxE &lista);
 
 #endif // LISTAJUGADORESPOREQUIPO_H_INCLUDED

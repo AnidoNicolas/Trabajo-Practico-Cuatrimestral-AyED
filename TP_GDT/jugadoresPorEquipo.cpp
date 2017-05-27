@@ -1,14 +1,14 @@
 #include "jugadoresPorEquipo.h"
 
 void crear(JugadoresPorEquipo &jugadoresPorEquipo){
-    int jugadoresPorEquipo.idJugador=0;
-    int jugadoresPorEquipo.idEquipo=0;
+    jugadoresPorEquipo.idJugador=0;
+    jugadoresPorEquipo.idEquipo=0;
 }
 
-int getidEquipo(jugadoresPorEquipo &jugadoresPorequipo){
+int getidEquipo(JugadoresPorEquipo &jugadoresPorequipo){
     return jugadoresPorequipo.idEquipo;
 }
 
-int getidJugador(jugadoresPorEquipo &jugadoresPorequipo){
+int getidJugador(JugadoresPorEquipo &jugadoresPorequipo){
     return jugadoresPorequipo.idJugador;
 }

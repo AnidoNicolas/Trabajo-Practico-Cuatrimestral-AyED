@@ -1,22 +1,11 @@
 #include "listaJugadoresPorEquipo.h"
-
-ResultadoComparacion compararDato(DatoPJ dato1, DatoPJ dato2) {
-    if (dato1.idJugador > dato2.idJugador) {
-        return MAYOR;
-    }
-    else if (dato1.idJugador< dato2.idJugador) {
-        return MENOR;
-    }
-    else {
-        return IGUAL;
-    }
-}
-
-
-
-
+#ifndef NULL
+#define NULL      0
+#endif
 /******************************************************************************/
-/* Implementación de Primitivas */ResultadoComparacion compararDato(DatoPJ dato1, DatoPJ dato2) {
+/* Implementación de Primitivas */
+
+ResultadoComparacion compararDato(DatoJxE dato1, DatoJxE dato2) {
     if (dato1.idJugador > dato2.idJugador) {
         return MAYOR;
     }
@@ -35,279 +24,6 @@ ResultadoComparacion compararDato(DatoPJ dato1, DatoPJ dato2) {
 /* Implementación de Primitivas */
 /*------------------------------*/
 
-void crearLista(listaPJ &lista) {
-  lista.primero = finJxE();
-}
-
-/*----------------------------------------------------------------------------*/
-bool listaVacia(listaPJ &lista) {
-
-  return (primero(lista) == finJxE());
-}
-
-PtrNodoListaPxE finJxE() {
-  return NULL;
-}
-
-/*----------------------------------------------------------------------------*/
-
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE primero(listaPJ &lista) {
-  return lista.primero;
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE siguiente(listaPJ&lista, PtrNodoListaPxE ptrNodo) {
-
-  /* verifica si la lista está vacia o si ptrNodo es el último */
-  if ((! listaVacia(lista)) && (ptrNodo != finJxE()))
-    return ptrNodo->sgte;
-  else
-    return finJxE();
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE anterior(listaPJ &lista, PtrNodoListaPxE ptrNodo) {
-
-  PtrNodoListaPxE ptrPrevio = finJxE();
-  PtrNodoListaPxE ptrCursor = primero(lista);
-
-  while (( ptrCursor != finJxE()) && (ptrCursor != ptrNodo)) {
-    ptrPrevio = ptrCursor;
-    ptrCursor = siguiente(lista,ptrCursor);
-  }
-  return ptrPrevio;
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE ultimo(listaPJ &lista) {
-
-  /* el último nodo de la lista es el anterior al fin() */
-  return anterior(lista,finJxE());
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE crearNodoLista(DatoPJ dato) {
-
-  /* reserva memoria para el nodo y luego completa sus datos */
-  PtrNodoListaPxE ptrAux = new NodoListaPJ;
-
-  ptrAux->dato = dato;
-  ptrAux->sgte = finJxE();
-
-  return ptrAux;
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarPrincipio(listaPJ &lista, DatoPJ dato) {
-
-  /* crea el nodo */
-  PtrNodoListaPxE ptrNuevoNodo = crearNodoLista(dato);
-
-  /* lo incorpora al principio de la lista */
-  ptrNuevoNodo->sgte = lista.primero;
-  lista.primero = ptrNuevoNodo;
-
-  return ptrNuevoNodo;
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarDespues(listaPJ &lista, DatoPJ dato, PtrNodoListaPxE ptrNodo) {
-
-  PtrNodoListaPxE ptrNuevoNodo = finJxE();
-
-  /* si la lista está vacia se adiciona la principio */
-  if (listaVacia(lista))
-    ptrNuevoNodo = adicionarPrincipio(lista,dato);
-
-  else {
-    if (ptrNodo != finJxE()) {
-
-      /* crea el nodo y lo intercala en la lista */
-      ptrNuevoNodo = crearNodoLista(dato);
-
-      ptrNuevoNodo->sgte = ptrNodo->sgte;
-      ptrNodo->sgte = ptrNuevoNodo;
-    }
-  }
-  return ptrNuevoNodo;
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarFinal(listaPJ &lista, DatoPJ dato) {
-
-  /* adiciona el dato después del último nodo de la lista */
-  return adicionarDespues(lista,dato,ultimo(lista));
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarAntes(listaPJ &lista, DatoPJ dato, PtrNodoListaPxE ptrNodo) {
-
-  PtrNodoListaPxE ptrNuevoNodo = finJxE();
-
-  if (! listaVacia(lista)) {
-    if (ptrNodo != primero(lista))
-      ptrNuevoNodo = adicionarDespues(lista,dato,anterior(lista,ptrNodo));
-    else
-      ptrNuevoNodo = adicionarPrincipio(lista,dato);
-   }
-   return ptrNuevoNodo;
-}
-
-/*----------------------------------------------------------------------------*/
-void colocarDato(listaPJ &lista, DatoPJ &dato, PtrNodoListaPxE ptrNodo) {
-
-  if ( (! listaVacia(lista)) && (ptrNodo != finJxE()))
-     ptrNodo->dato = dato;
-}
-
-/*----------------------------------------------------------------------------*/
-void obtenerDato(listaPJ &lista, DatoPJ &dato, PtrNodoListaPxE ptrNodo) {
-
-  if ((! listaVacia(lista)) && (ptrNodo != finJxE()))
-    dato = ptrNodo->dato;
-}
-
-/*----------------------------------------------------------------------------*/
-void eliminarNodo(listaPJ &lista, PtrNodoListaPxE ptrNodo) {
-
-  PtrNodoListaPxE ptrPrevio;
-
-  /* verifica que la lista no esté vacia y que nodo no sea fin*/
-  if ((! listaVacia(lista)) && (ptrNodo != finJxE())) {
-
-    if (ptrNodo == primero(lista))
-      lista.primero = siguiente(lista,primero(lista));
-
-    else {
-      ptrPrevio = anterior( lista , ptrNodo );
-      ptrPrevio->sgte = ptrNodo->sgte;
-    }
-    // Si el dato es un TDA, acá habría que llamar al destructor.
-
-    delete ptrNodo;
-  }
-}
-
-/*----------------------------------------------------------------------------*/
-void eliminarNodoPrimero(listaPJ &lista) {
-
-  if (! listaVacia(lista))
-    eliminarNodo(lista,primero(lista));
-}
-
-/*----------------------------------------------------------------------------*/
-void eliminarNodoUltimo(listaPJ &lista) {
-
-  if (! listaVacia(lista))
-    eliminarNodo(lista,ultimo(lista));
-}
-
-/*----------------------------------------------------------------------------*/
-void eliminarLista(listaPJ &lista) {
-
-  /* retira uno a uno los nodos de la lista */
-  while (! listaVacia(lista))
-    eliminarNodo(lista,primero(lista));
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE localizarDato(listaPJ &lista, DatoPJ dato) {
-
-   bool encontrado = false;
-   DatoPJ datoCursor;
-   PtrNodoListaPxE ptrCursor = primero(lista);
-
-  /* recorre los nodos hasta llegar al último o hasta
-     encontrar el nodo buscado */
-  while ((ptrCursor != finJxE()) && (! encontrado)) {
-
-    /* obtiene el dato del nodo y lo compara */
-    obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == IGUAL)
-      encontrado = true;
-    else
-      ptrCursor = siguiente(lista,ptrCursor);
-  }
-
-  /* si no lo encontró devuelve fin */
-  if (! encontrado)
-    ptrCursor = finJxE();
-
-  return ptrCursor;
-}
-
-/*----------------------------------------------------------------------------*/
-void eliminarDato(listaPJ &lista, DatoPJ dato) {
-
-  /* localiza el dato y luego lo elimina */
-  PtrNodoListaPxE ptrNodo = localizarDato(lista,dato);
-  if (ptrNodo != finJxE())
-    eliminarNodo(lista,ptrNodo);
-}
-
-/*----------------------------------------------------------------------------*/
-PtrNodoListaPxE insertarDato(listaPJ &lista, DatoPJ dato) {
-
-  PtrNodoListaPxE ptrPrevio = primero(lista);
-  PtrNodoListaPxE ptrCursor = primero(lista);
-  PtrNodoListaPxE ptrNuevoNodo;
-  DatoPJ datoCursor;
-  bool ubicado = false;
-
-  /* recorre la lista buscando el lugar de la inserción */
-  while ((ptrCursor != finJxE()) && (! ubicado)) {
-
-    obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == MAYOR)
-      ubicado = true;
-
-    else {
-      ptrPrevio = ptrCursor;
-      ptrCursor = siguiente(lista,ptrCursor);
-    }
-  }
-
-  if (ptrCursor == primero(lista))
-    ptrNuevoNodo = adicionarPrincipio(lista,dato);
-  else
-    ptrNuevoNodo = adicionarDespues(lista,dato,ptrPrevio);
-
-  return ptrNuevoNodo;
-}
-
-/*----------------------------------------------------------------------------*/
-
-void reordenar(listaPJ &lista) {
-
-  listaPJ temp = lista;
-  PtrNodoListaPxE ptrCursor = primero(temp);
-  crearLista(lista);
-  while ( ptrCursor != finJxE() ) {
-        DatoPJ dato;
-        obtenerDato( temp, dato, ptrCursor);
-        insertarDato( lista, dato );
-        eliminarNodo( temp, ptrCursor );
-        ptrCursor = primero(temp);
-  }
-  eliminarLista( temp );
-}
-
-/*----------------------------------------------------------------------------*/
-
-int longitud(listaPJ &lista){
-  PtrNodoListaPxE ptrCursor = primero(lista);
-  int longitud = 0;
-  while ( ptrCursor != finJxE() ) {
-        longitud++;
-        ptrCursor = siguiente( lista, ptrCursor);
-  }
-  return longitud;
-}
-/*------------------------------*/
-
-PtrNodoListaPxE finPxE() {
 void crearLista(listaJxE &lista) {
   lista.primero = finJxE();
 }
@@ -318,7 +34,7 @@ bool listaVacia(listaJxE &lista) {
   return (primero(lista) == finJxE());
 }
 
-PtrNodoListaPxE finJxE() {
+PtrNodoListaJxE finJxE() {
   return NULL;
 }
 
@@ -326,12 +42,12 @@ PtrNodoListaPxE finJxE() {
 
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE primero(listaJxE &lista) {
+PtrNodoListaJxE primero(listaJxE &lista) {
   return lista.primero;
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE siguiente(listaJxE&lista, PtrNodoListaPxE ptrNodo) {
+PtrNodoListaJxE siguiente(listaJxE&lista, PtrNodoListaJxE ptrNodo) {
 
   /* verifica si la lista está vacia o si ptrNodo es el último */
   if ((! listaVacia(lista)) && (ptrNodo != finJxE()))
@@ -341,10 +57,10 @@ PtrNodoListaPxE siguiente(listaJxE&lista, PtrNodoListaPxE ptrNodo) {
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE anterior(listaJxE &lista, PtrNodoListaPxE ptrNodo) {
+PtrNodoListaJxE anterior(listaJxE &lista, PtrNodoListaJxE ptrNodo) {
 
-  PtrNodoListaPxE ptrPrevio = finJxE();
-  PtrNodoListaPxE ptrCursor = primero(lista);
+  PtrNodoListaJxE ptrPrevio = finJxE();
+  PtrNodoListaJxE ptrCursor = primero(lista);
 
   while (( ptrCursor != finJxE()) && (ptrCursor != ptrNodo)) {
     ptrPrevio = ptrCursor;
@@ -354,17 +70,17 @@ PtrNodoListaPxE anterior(listaJxE &lista, PtrNodoListaPxE ptrNodo) {
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE ultimo(listaJxE &lista) {
+PtrNodoListaJxE ultimo(listaJxE &lista) {
 
   /* el último nodo de la lista es el anterior al fin() */
   return anterior(lista,finJxE());
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE crearNodoLista(DatoPJ dato) {
+PtrNodoListaJxE crearNodoLista(DatoJxE dato) {
 
   /* reserva memoria para el nodo y luego completa sus datos */
-  PtrNodoListaPxE ptrAux = new NodoListaPJ;
+  PtrNodoListaJxE ptrAux = new NodoListaJxE;
 
   ptrAux->dato = dato;
   ptrAux->sgte = finJxE();
@@ -373,10 +89,10 @@ PtrNodoListaPxE crearNodoLista(DatoPJ dato) {
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarPrincipio(listaJxE &lista, DatoPJ dato) {
+PtrNodoListaJxE adicionarPrincipio(listaJxE &lista, DatoJxE dato) {
 
   /* crea el nodo */
-  PtrNodoListaPxE ptrNuevoNodo = crearNodoLista(dato);
+  PtrNodoListaJxE ptrNuevoNodo = crearNodoLista(dato);
 
   /* lo incorpora al principio de la lista */
   ptrNuevoNodo->sgte = lista.primero;
@@ -386,9 +102,9 @@ PtrNodoListaPxE adicionarPrincipio(listaJxE &lista, DatoPJ dato) {
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarDespues(listaJxE &lista, DatoPJ dato, PtrNodoListaPxE ptrNodo) {
+PtrNodoListaJxE adicionarDespues(listaJxE &lista, DatoJxE dato, PtrNodoListaJxE ptrNodo) {
 
-  PtrNodoListaPxE ptrNuevoNodo = finJxE();
+  PtrNodoListaJxE ptrNuevoNodo = finJxE();
 
   /* si la lista está vacia se adiciona la principio */
   if (listaVacia(lista))
@@ -408,16 +124,16 @@ PtrNodoListaPxE adicionarDespues(listaJxE &lista, DatoPJ dato, PtrNodoListaPxE p
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarFinal(listaJxE &lista, DatoPJ dato) {
+PtrNodoListaJxE adicionarFinal(listaJxE &lista, DatoJxE dato) {
 
   /* adiciona el dato después del último nodo de la lista */
   return adicionarDespues(lista,dato,ultimo(lista));
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE adicionarAntes(listaJxE &lista, DatoPJ dato, PtrNodoListaPxE ptrNodo) {
+PtrNodoListaJxE adicionarAntes(listaJxE &lista, DatoJxE dato, PtrNodoListaJxE ptrNodo) {
 
-  PtrNodoListaPxE ptrNuevoNodo = finJxE();
+  PtrNodoListaJxE ptrNuevoNodo = finJxE();
 
   if (! listaVacia(lista)) {
     if (ptrNodo != primero(lista))
@@ -429,23 +145,23 @@ PtrNodoListaPxE adicionarAntes(listaJxE &lista, DatoPJ dato, PtrNodoListaPxE ptr
 }
 
 /*----------------------------------------------------------------------------*/
-void colocarDato(listaJxE &lista, DatoPJ &dato, PtrNodoListaPxE ptrNodo) {
+void colocarDato(listaJxE &lista, DatoJxE &dato, PtrNodoListaJxE ptrNodo) {
 
   if ( (! listaVacia(lista)) && (ptrNodo != finJxE()))
      ptrNodo->dato = dato;
 }
 
 /*----------------------------------------------------------------------------*/
-void obtenerDato(listaJxE &lista, DatoPJ &dato, PtrNodoListaPxE ptrNodo) {
+void obtenerDato(listaJxE &lista, DatoJxE &dato, PtrNodoListaJxE ptrNodo) {
 
   if ((! listaVacia(lista)) && (ptrNodo != finJxE()))
     dato = ptrNodo->dato;
 }
 
 /*----------------------------------------------------------------------------*/
-void eliminarNodo(listaJxE &lista, PtrNodoListaPxE ptrNodo) {
+void eliminarNodo(listaJxE &lista, PtrNodoListaJxE ptrNodo) {
 
-  PtrNodoListaPxE ptrPrevio;
+  PtrNodoListaJxE ptrPrevio;
 
   /* verifica que la lista no esté vacia y que nodo no sea fin*/
   if ((! listaVacia(lista)) && (ptrNodo != finJxE())) {
@@ -486,11 +202,11 @@ void eliminarLista(listaJxE &lista) {
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE localizarDato(listaJxE &lista, DatoPJ dato) {
+PtrNodoListaJxE localizarDato(listaJxE &lista, DatoJxE dato) {
 
    bool encontrado = false;
-   DatoPJ datoCursor;
-   PtrNodoListaPxE ptrCursor = primero(lista);
+   DatoJxE datoCursor;
+   PtrNodoListaJxE ptrCursor = primero(lista);
 
   /* recorre los nodos hasta llegar al último o hasta
      encontrar el nodo buscado */
@@ -512,21 +228,21 @@ PtrNodoListaPxE localizarDato(listaJxE &lista, DatoPJ dato) {
 }
 
 /*----------------------------------------------------------------------------*/
-void eliminarDato(listaJxE &lista, DatoPJ dato) {
+void eliminarDato(listaJxE &lista, DatoJxE dato) {
 
   /* localiza el dato y luego lo elimina */
-  PtrNodoListaPxE ptrNodo = localizarDato(lista,dato);
+  PtrNodoListaJxE ptrNodo = localizarDato(lista,dato);
   if (ptrNodo != finJxE())
     eliminarNodo(lista,ptrNodo);
 }
 
 /*----------------------------------------------------------------------------*/
-PtrNodoListaPxE insertarDato(listaJxE &lista, DatoPJ dato) {
+PtrNodoListaJxE insertarDato(listaJxE &lista, DatoJxE dato) {
 
-  PtrNodoListaPxE ptrPrevio = primero(lista);
-  PtrNodoListaPxE ptrCursor = primero(lista);
-  PtrNodoListaPxE ptrNuevoNodo;
-  DatoPJ datoCursor;
+  PtrNodoListaJxE ptrPrevio = primero(lista);
+  PtrNodoListaJxE ptrCursor = primero(lista);
+  PtrNodoListaJxE ptrNuevoNodo;
+  DatoJxE datoCursor;
   bool ubicado = false;
 
   /* recorre la lista buscando el lugar de la inserción */
@@ -555,10 +271,10 @@ PtrNodoListaPxE insertarDato(listaJxE &lista, DatoPJ dato) {
 void reordenar(listaJxE &lista) {
 
   listaJxE temp = lista;
-  PtrNodoListaPxE ptrCursor = primero(temp);
+  PtrNodoListaJxE ptrCursor = primero(temp);
   crearLista(lista);
   while ( ptrCursor != finJxE() ) {
-        DatoPJ dato;
+        DatoJxE dato;
         obtenerDato( temp, dato, ptrCursor);
         insertarDato( lista, dato );
         eliminarNodo( temp, ptrCursor );
@@ -570,7 +286,7 @@ void reordenar(listaJxE &lista) {
 /*----------------------------------------------------------------------------*/
 
 int longitud(listaJxE &lista){
-  PtrNodoListaPxE ptrCursor = primero(lista);
+  PtrNodoListaJxE ptrCursor = primero(lista);
   int longitud = 0;
   while ( ptrCursor != finJxE() ) {
         longitud++;
@@ -578,3 +294,4 @@ int longitud(listaJxE &lista){
   }
   return longitud;
 }
+/*------------------------------*/
