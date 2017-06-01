@@ -1,16 +1,24 @@
 #include "club.h"
 
-void crear(club &club){
+void crear(Club &club){
     club.idClub=0;
     club.nombre="x";
 }
 
-int getIdClub(club &club){
+int getIdClub(Club &club){
     return club.idClub;
 }
 
-char* getNombre(club &club){
+char* getNombre(Club &club){
     return club.nombre;
+}
+
+void setId(Club &club, int id){
+    club.idClub=id;
+}
+
+void setNombre(Club &club, char*nombre){
+    club.nombre=nombre;
 }
 
 

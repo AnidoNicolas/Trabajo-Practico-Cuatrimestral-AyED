@@ -4,14 +4,18 @@
 typedef struct  {
     int idClub;
     char* nombre;
-}club;
+}Club;
 
-void crear(club &club);
+void crear(Club &club);
 
-void destruir(club &club);
+void destruir(Club &club);
 
-int getIdClub(club &club);
+int getIdClub(Club &club);
 
-char* getNombre(club &club);
+char* getNombre(Club &club);
+
+void setId(Club &club, int id);
+
+void setNombre(Club &club, char* nombre);
 
 #endif // CLUB_H_INCLUDED

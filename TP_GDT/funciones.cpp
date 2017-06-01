@@ -6,11 +6,28 @@
 
 using namespace std;
 
+
+void cargarClubes(listaClubes &lista){
+    char id[2];
+    char* nom;
+    ifstream fclub ("clubes.db",ios::in);
+    if(!fclub) cout << "no existe el archivo de clubes";
+    while(!fclub.eof()){
+        nom = new char[30];
+        Club cl;
+        crear(cl);
+        fclub.getline(id,2,';');
+        setId(cl, atoi(id));
+        fclub.getline(nom,30,'\n');
+        setNombre(cl, nom);
+        adicionarFinal(lista, cl);
+    }
+}
+
 void cargarEquipos(ListaEquipo &lista){
     char id[2];
     char* nombre;
     char* usuario;
-    int idEntero;
     ifstream fequipo ("equipos.db",ios::in);
     if(!fequipo) cout << "no existe el arhcivo de equipos";
     while(!fequipo.eof()){
@@ -37,6 +54,17 @@ void recorrerEquipo (ListaEquipo &lista){
         obtenerDatoEquipo(lista, dato, cursor);
         cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario <<" "<<dato.puntajeFecha << endl;
         cursor= siguienteEquipo(lista,cursor);
+    }
+}
+
+void recorrerClubes(listaClubes &lista){
+    PtrNodoListaCl cursor = primero(lista);
+    Club club;
+
+    while (cursor!= fin()){
+        obtenerDato(lista, club, cursor);
+        cout << club.idClub<<" "<<club.nombre<< endl;
+        cursor= siguiente(lista,cursor);
     }
 }
 

@@ -1,9 +1,10 @@
+#include "club.h"
 #ifndef LISTACLUBES_H_INCLUDED
 #define LISTACLUBES_H_INCLUDED
 #ifndef NULL
 #define NULL      0
 #endif
-#include "club.h"
+
 
 /******************************************************************************/
 /* Definiciones de Tipos de Datos */
@@ -21,7 +22,7 @@ enum ResultadoComparacion {
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */
-typedef club DatoCl;
+typedef Club DatoCl;
 
 /* Tipo de Estructura de los Nodos de la Lista. */
 struct NodoListaCl {
