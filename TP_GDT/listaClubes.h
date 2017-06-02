@@ -71,7 +71,7 @@ bool listaVacia(listaClubes &lista);
 
   return representación del fin de la lista.
 */
-PtrNodoListaCl fin();
+PtrNodoListaCl finClub();
 
 /*----------------------------------------------------------------------------*/
 /*

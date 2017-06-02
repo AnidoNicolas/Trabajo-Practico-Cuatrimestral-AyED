@@ -77,7 +77,7 @@
 1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listajugadores.cpp
 	"listaJugadores.h"
 
-1496360604 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.cpp
+1496431875 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.cpp
 	"funciones.h"
 	<fstream>
 	<iostream>
@@ -101,12 +101,12 @@
 1496360580 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\club.cpp
 	"club.h"
 
-1496360580 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\club.h
+1496368827 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\club.h
 
-1495747136 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.cpp
+1496369190 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.cpp
 	"listaClubes.h"
 
-1496360588 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.h
+1496369190 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\listaclubes.h
 	"club.h"
 
 1495903245 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugadoresporequipo.cpp

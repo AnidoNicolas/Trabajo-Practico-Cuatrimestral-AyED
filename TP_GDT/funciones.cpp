@@ -8,24 +8,26 @@ using namespace std;
 
 
 void cargarClubes(listaClubes &lista){
-    char id[2];
+    char id[3];
     char* nom;
     ifstream fclub ("clubes.db",ios::in);
     if(!fclub) cout << "no existe el archivo de clubes";
-    while(!fclub.eof()){
+    while(!fclub.eof() ){
         nom = new char[30];
         Club cl;
         crear(cl);
-        fclub.getline(id,2,';');
+        fclub.getline(id,3,';');
         setId(cl, atoi(id));
         fclub.getline(nom,30,'\n');
         setNombre(cl, nom);
         adicionarFinal(lista, cl);
+
     }
+    fclub.close();
 }
 
 void cargarEquipos(ListaEquipo &lista){
-    char id[2];
+    char id[3];
     char* nombre;
     char* usuario;
     ifstream fequipo ("equipos.db",ios::in);
@@ -35,15 +37,15 @@ void cargarEquipos(ListaEquipo &lista){
         usuario= new char[30];
         Equipo equipo;
         crear(equipo);
-        fequipo.getline(id,2,';');
+        fequipo.getline(id,3,';');
         setId(equipo, atoi(id));
         fequipo.getline(nombre,30,';');
         setNombre(equipo,nombre);
         fequipo.getline(usuario,30,'\n');
         setNombreUsuario(equipo,usuario);
         adicionarFinalEquipo(lista,equipo);
-
     }
+    fequipo.close();
 }
 void recorrerEquipo (ListaEquipo &lista){
 
@@ -61,7 +63,7 @@ void recorrerClubes(listaClubes &lista){
     PtrNodoListaCl cursor = primero(lista);
     Club club;
 
-    while (cursor!= fin()){
+    while (cursor!= finClub()){
         obtenerDato(lista, club, cursor);
         cout << club.idClub<<" "<<club.nombre<< endl;
         cursor= siguiente(lista,cursor);
