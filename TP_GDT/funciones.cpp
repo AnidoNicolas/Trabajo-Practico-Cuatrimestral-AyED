@@ -47,7 +47,22 @@ void cargarEquipos(ListaEquipo &lista){
     }
     fequipo.close();
 }
-void recorrerEquipo (ListaEquipo &lista){
+
+void cargarJugadoresPorEquipo (listaJxE &lista){
+    char idE[3],idJ[3];
+    ifstream fJugadoresPorEquipo("jugadoresPorEquipo.db",ios::in);
+    if(!fJugadoresPorEquipo)cout<<"no existe el arhcivo de jugadores por equipo ";
+    while(!fJugadoresPorEquipo.eof()){
+        JugadoresPorEquipo JxE;
+        crear(JxE);
+        fJugadoresPorEquipo.getline(idE,3,';');
+        setIdEquipo(JxE,atoi(idE));
+        fJugadoresPorEquipo.getline(idJ,3,'\n');
+        setIdJugador(JxE,atoi(idJ));
+        adicionarFinal(lista, JxE);
+    }
+}
+void MostrarEnPantallaEquipos (ListaEquipo &lista){
 
     PtrNodoListaEquipo cursor = primeroEquipo(lista);
     DatoEquipo dato;
@@ -59,13 +74,25 @@ void recorrerEquipo (ListaEquipo &lista){
     }
 }
 
-void recorrerClubes(listaClubes &lista){
+void MostrarEnPantallaClubes(listaClubes &lista){
     PtrNodoListaCl cursor = primero(lista);
     Club club;
 
     while (cursor!= finClub()){
         obtenerDato(lista, club, cursor);
         cout << club.idClub<<" "<<club.nombre<< endl;
+        cursor= siguiente(lista,cursor);
+    }
+}
+
+void MostrarEnPantallaJugadoresPorEquipo(listaJxE &lista){
+
+    PtrNodoListaJxE cursor = primero(lista);
+    JugadoresPorEquipo JxE;
+
+    while (cursor!= finJxE()){
+        obtenerDato(lista, JxE, cursor);
+        cout << JxE.idEquipo<<" "<<JxE.idJugador << endl;
         cursor= siguiente(lista,cursor);
     }
 }

@@ -1,7 +1,6 @@
+#include "jugadoresPorEquipo.h"
 #ifndef LISTAJUGADORESPOREQUIPO_H_INCLUDED
 #define LISTAJUGADORESPOREQUIPO_H_INCLUDED
-
-#include "jugadoresPorEquipo.h"
 
 #ifndef __RESULTADOCOMPARACION__
 #define __RESULTADOCOMPARACION__

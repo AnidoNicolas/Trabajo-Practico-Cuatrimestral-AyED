@@ -20,18 +20,23 @@ setConfiguracion(config);
 ListaEquipo equipos;
 crearListaEquipo(equipos);
 cargarEquipos(equipos);
-recorrerEquipo(equipos);
+MostrarEnPantallaEquipos(equipos);
+cout<<endl;
 listaClubes clubes;
 crearLista(clubes);
 cargarClubes(clubes);
+MostrarEnPantallaClubes(clubes);
 cout<<endl;
-recorrerClubes(clubes);
+listaJxE jxe;
+crearLista(jxe);
+cargarJugadoresPorEquipo(jxe);
+MostrarEnPantallaJugadoresPorEquipo(jxe);
 cout<<endl;
 setPuntajeFecha(equipos.primeroEquipo->dato,5);
 setPuntajeFecha(equipos.primeroEquipo->sgte->dato,10);
 setPuntajeFecha(equipos.primeroEquipo->sgte->sgte->dato,15);
 ordenarEquiposPorAtrivuto(equipos,FECHA);
-recorrerEquipo(equipos);
+MostrarEnPantallaEquipos(equipos);
 
 
 

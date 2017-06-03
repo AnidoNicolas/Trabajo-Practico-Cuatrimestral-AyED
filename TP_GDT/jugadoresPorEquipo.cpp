@@ -12,3 +12,11 @@ int getidEquipo(JugadoresPorEquipo &jugadoresPorequipo){
 int getidJugador(JugadoresPorEquipo &jugadoresPorequipo){
     return jugadoresPorequipo.idJugador;
 }
+
+void setIdEquipo(JugadoresPorEquipo &jugadoresPorEquipo, int id){
+    jugadoresPorEquipo.idEquipo=id;
+}
+
+void setIdJugador(JugadoresPorEquipo &jugadoresPorEquipo, int id){
+    jugadoresPorEquipo.idJugador=id;
+}
