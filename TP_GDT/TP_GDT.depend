@@ -28,12 +28,12 @@
 1495850101 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\equipo.h
 	"listaJugadores.h"
 
-1495714632 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.h
+1496865475 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.h
 
-1495681520 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.cpp
+1496865468 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\jugador.cpp
 	"jugador.h"
 
-1496449721 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\main.cpp
+1496867264 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\main.cpp
 	"funciones.h"
 	"configuracion.h"
 	"listaClubes.h"
@@ -77,13 +77,14 @@
 1495653200 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\tp_gdt\listajugadores.cpp
 	"listaJugadores.h"
 
-1496449513 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.cpp
+1496868659 source:d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.cpp
 	"funciones.h"
 	<fstream>
 	<iostream>
 	<stdlib.h>
+	<string.h>
 
-1496449386 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.h
+1496867374 d:\claudio\estudios\unla\segundo año\primer cuatrimestre\algoritmos y estructura de datos\trabajos en c\2017\trabajo-practico-cuatrimestral-ayed\tp_gdt\funciones.h
 	"listaEquipos.h"
 	"listaClubes.h"
 	"listaJugadoresPorEquipo.h"

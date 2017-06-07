@@ -6,6 +6,7 @@ enum Posicion{ARQ,DEF,MED,DEL};
 struct Jugador{
     int id;
     char* nombre;
+    int idClub;
     Posicion posision;
     float precio;
     int puntajeFecha;
@@ -18,9 +19,23 @@ void crear(Jugador &jugador);
 
 void setNombre(Jugador &Jugador, char *nom);
 
+void setId(Jugador &jugador, int id);
+
+void setIdClub(Jugador &Jugador, int id);
+
+void setPosicion(Jugador &jugador, Posicion posicion);
+
+void setPrecio(Jugador &jugador, float precio);
+
+void setPuntajeFecha(Jugador &jugador, int puntaje);
+
+void setPuntajeTotal(Jugador &jugador, int puntaje);
+
 int getId(Jugador &jugador);
 
 char* getNombre(Jugador &jugador);
+
+int getIdClub(Jugador &jugador);
 
 Posicion getPosicion (Jugador &jugador);
 

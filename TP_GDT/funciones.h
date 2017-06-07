@@ -11,7 +11,11 @@ void cargarEquipos(ListaEquipo &lista);
 
 void cargarJugadoresPorEquipo (listaJxE &lista);
 
+void cargarJugadores(ListaJugador &lista);
+
 void MostrarEnPantallaEquipos (ListaEquipo &lista);
+
+void MostrarEnPantallaJugadores(ListaJugador &lista);
 
 void MostrarEnPantallaClubes(listaClubes &lista);
 

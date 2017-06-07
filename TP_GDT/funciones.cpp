@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
+#include <string.h>
 
 
 using namespace std;
@@ -61,7 +62,38 @@ void cargarJugadoresPorEquipo (listaJxE &lista){
         setIdJugador(JxE,atoi(idJ));
         adicionarFinal(lista, JxE);
     }
+    fJugadoresPorEquipo.close();
 }
+
+void cargarJugadores(ListaJugador &lista){
+    char id[3],idClub[3], posicion[4],precio[10];
+    char* nombre;
+    Posicion pos=ARQ;
+    ifstream fJugador ("jugadores.db",ios::in);
+    if(!fJugador) cout<<"no existe el archivo de jugadores";
+    while(!fJugador.eof()){
+        nombre = new char[30];
+        Jugador jugador;
+        crear(jugador);
+        fJugador.getline(id,3,';');
+        setId(jugador, atoi(id));
+        fJugador.getline(nombre,30,';');
+        setNombre(jugador, nombre);
+        fJugador.getline(idClub,3,';');
+        setIdClub(jugador, atoi(idClub));
+        fJugador.getline(posicion,4,';');
+        if(strcmp(posicion,"ARQ")) pos=ARQ;
+        else if(strcmp(posicion,"DEF"))pos=DEF;
+        else if(strcmp(posicion,"MED"))pos=MED;
+        else if(strcmp(posicion,"DEL"))pos=DEL;
+        setPosicion(jugador,pos);
+        fJugador.getline(precio,10,'\n');
+        setPrecio(jugador,atof(precio));
+        adicionarFinal(lista,jugador);
+    }
+    fJugador.close();
+}
+
 void MostrarEnPantallaEquipos (ListaEquipo &lista){
 
     PtrNodoListaEquipo cursor = primeroEquipo(lista);
@@ -71,6 +103,17 @@ void MostrarEnPantallaEquipos (ListaEquipo &lista){
         obtenerDatoEquipo(lista, dato, cursor);
         cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario <<" "<<dato.puntajeFecha << endl;
         cursor= siguienteEquipo(lista,cursor);
+    }
+}
+
+void MostrarEnPantallaJugadores(ListaJugador &lista){
+    PtrNodoLista cursor = primero(lista);
+    Jugador jug;
+
+    while(cursor!= finJugadores()){
+        obtenerDato(lista, jug, cursor);
+        cout<<jug.id<<" "<<jug.nombre<<" "<<jug.idClub<<" "<<jug.posision<<" "<<jug.precio<<endl;
+        cursor= siguiente(lista,cursor);
     }
 }
 
