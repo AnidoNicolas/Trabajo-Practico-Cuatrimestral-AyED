@@ -82,10 +82,10 @@ void cargarJugadores(ListaJugador &lista){
         fJugador.getline(idClub,3,';');
         setIdClub(jugador, atoi(idClub));
         fJugador.getline(posicion,4,';');
-        if(strcmp(posicion,"ARQ")) pos=ARQ;
-        else if(strcmp(posicion,"DEF"))pos=DEF;
-        else if(strcmp(posicion,"MED"))pos=MED;
-        else if(strcmp(posicion,"DEL"))pos=DEL;
+        if(!strcmp(posicion,"ARQ")) pos=ARQ;
+        else if(!strcmp(posicion,"DEF"))pos=DEF;
+        else if(!strcmp(posicion,"MED"))pos=MED;
+        else if(!strcmp(posicion,"DEL"))pos=DEL;
         setPosicion(jugador,pos);
         fJugador.getline(precio,10,'\n');
         setPrecio(jugador,atof(precio));
