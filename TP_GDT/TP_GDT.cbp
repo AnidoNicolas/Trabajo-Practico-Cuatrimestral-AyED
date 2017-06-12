@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ColaErrores.cpp" />
+		<Unit filename="ColaErrores.h" />
 		<Unit filename="Main.cpp" />
 		<Unit filename="club.cpp" />
 		<Unit filename="club.h" />
@@ -38,6 +40,8 @@
 		<Unit filename="configuracion.h" />
 		<Unit filename="equipo.cpp" />
 		<Unit filename="equipo.h" />
+		<Unit filename="error.cpp" />
+		<Unit filename="error.h" />
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="jugador.cpp" />

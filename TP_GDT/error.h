@@ -2,17 +2,17 @@
 #define __ERROR_H__
 
 struct Error{
-    int idError;
+    int NumeroError;
     char* descripcion;
 };
 
 void crear(Error &error);
 
-int getIdError(Error &error);
+int getNumeroError(Error &error);
 
 char* getDescripcion(Error &error);
 
-void setIdError(Error &error, int id);
+void setNumeroError(Error &error, int numero);
 
 void setDescripcion(Error &error, char* descripcion);
 

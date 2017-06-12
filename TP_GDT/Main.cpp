@@ -45,7 +45,6 @@ MostrarEnPantallaEquipos(equipos);
 
 
 
-
 Jugador pepe;
 crear(pepe);
 char nomb[5]="pepe";
