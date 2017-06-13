@@ -37,11 +37,16 @@ crearLista(jxe);
 cargarJugadoresPorEquipo(jxe);
 MostrarEnPantallaJugadoresPorEquipo(jxe);
 cout<<endl;
+/*
 setPuntajeFecha(equipos.primeroEquipo->dato,5);
 setPuntajeFecha(equipos.primeroEquipo->sgte->dato,10);
 setPuntajeFecha(equipos.primeroEquipo->sgte->sgte->dato,15);
 ordenarEquiposPorAtrivuto(equipos,FECHA);
-MostrarEnPantallaEquipos(equipos);
+*/
+
+cologarJugadoresEnEquipos(jxe,equipos,jugadores);
+
+MostrarEnPantallaEquiposConJugadores(equipos);
 
 
 

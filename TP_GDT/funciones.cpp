@@ -65,6 +65,22 @@ void cargarJugadoresPorEquipo (listaJxE &lista){
     fJugadoresPorEquipo.close();
 }
 
+void cologarJugadoresEnEquipos(listaJxE &jxe, ListaEquipo &equipos, ListaJugador &jugadores){
+    PtrNodoListaJxE cursorJxe= primero(jxe);
+    while(cursorJxe!=finJxE()){
+        Equipo equipoAux;
+        crear(equipoAux);
+        setId(equipoAux,getidEquipo(cursorJxe->dato));
+        PtrNodoListaEquipo cursorEquipo= localizarDatoEquipo(equipos,equipoAux);
+        Jugador jugadorAux;
+        crear(jugadorAux);
+        setId(jugadorAux,getidJugador(cursorJxe->dato));
+        PtrNodoLista cursorJugador = localizarDato(jugadores,jugadorAux);
+        adicionarFinal(*getJugadores(cursorEquipo->dato),cursorJugador->dato);
+        cursorJxe = siguiente(jxe,cursorJxe);
+    }
+}
+
 void cargarJugadores(ListaJugador &lista){
     char id[3],idClub[3], posicion[4],precio[10];
     char* nombre;
@@ -102,6 +118,25 @@ void MostrarEnPantallaEquipos (ListaEquipo &lista){
     while (cursor!= finEquipo()){
         obtenerDatoEquipo(lista, dato, cursor);
         cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario <<" "<<dato.puntajeFecha << endl;
+        cursor= siguienteEquipo(lista,cursor);
+    }
+}
+
+void MostrarEnPantallaEquiposConJugadores (ListaEquipo &lista){
+
+    PtrNodoListaEquipo cursor = primeroEquipo(lista);
+    DatoEquipo dato;
+    Jugador jug;
+
+    while (cursor!= finEquipo()){
+        obtenerDatoEquipo(lista, dato, cursor);
+        cout << dato.id<<" "<<dato.nombre<<" "<<dato.nombreUsuario <<" "<<dato.puntajeFecha << endl;
+        PtrNodoLista cursorJugador= primero(*getJugadores(cursor->dato));
+        while(!listaVacia(*getJugadores(cursor->dato))){
+                obtenerDato(*getJugadores(cursor->dato),jug,cursorJugador);
+                cout  <<getNombre(jug)<< endl;
+                siguiente(*getJugadores(cursor->dato),cursorJugador);
+        }
         cursor= siguienteEquipo(lista,cursor);
     }
 }

@@ -6,7 +6,9 @@ void crear(Equipo &equipo){
     equipo.id=0;
     equipo.nombre= "x";
     equipo.nombreUsuario= "x";
-    crearLista(equipo.jugadores);
+    ListaJugador jugadores;
+    crearLista(jugadores);
+    equipo.jugadores=&jugadores;
     equipo.puntajeFecha=0;
     equipo.puntajeTotal=0;
 }
@@ -23,7 +25,7 @@ char* getNombreUsuario(Equipo &equipo){
     return equipo.nombreUsuario;
 }
 
-ListaJugador getJugadores(Equipo &equipo){
+ListaJugador* getJugadores(Equipo &equipo){
     return equipo.jugadores;
 }
 

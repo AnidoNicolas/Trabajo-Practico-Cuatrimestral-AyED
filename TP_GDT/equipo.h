@@ -6,7 +6,7 @@ struct Equipo{
     int id;
     char* nombre;
     char* nombreUsuario;
-    ListaJugador jugadores;
+    ListaJugador* jugadores;
     int puntajeFecha;
     int puntajeTotal;
 };
@@ -26,7 +26,7 @@ char* getNombre(Equipo &equipo);
 
 char* getNombreUsuario(Equipo &equipo);
 
-ListaJugador getJugadores(Equipo &equipo);
+ListaJugador* getJugadores(Equipo &equipo);
 
 int getPuntajeFecha(Equipo &equipo);
 
