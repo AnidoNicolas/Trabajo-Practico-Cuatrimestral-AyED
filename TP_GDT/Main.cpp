@@ -37,6 +37,11 @@ crearLista(jxe);
 cargarJugadoresPorEquipo(jxe);
 MostrarEnPantallaJugadoresPorEquipo(jxe);
 cout<<endl;
+listaPJ pxj;
+crearLista(pxj);
+cargarPuntosPorJugador(pxj);
+MostrarEnPantallaPuntosPorJugador(pxj);
+cout<<endl;
 /*
 setPuntajeFecha(equipos.primeroEquipo->dato,5);
 setPuntajeFecha(equipos.primeroEquipo->sgte->dato,10);

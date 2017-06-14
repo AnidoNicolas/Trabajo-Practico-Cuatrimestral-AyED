@@ -16,7 +16,11 @@ void cargarJugadoresPorEquipo (listaJxE &lista);
 
 void cargarJugadores(ListaJugador &lista);
 
+void cargarPuntosPorJugador (listaPJ &lista);
+
 void cologarJugadoresEnEquipos(listaJxE &jxe, ListaEquipo &equipos, ListaJugador &jugadores);
+
+void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores);
 
 void MostrarEnPantallaEquipos (ListaEquipo &lista);
 
@@ -25,6 +29,8 @@ void MostrarEnPantallaEquiposConJugadores (ListaEquipo &lista);
 void MostrarEnPantallaJugadores(ListaJugador &lista);
 
 void MostrarEnPantallaClubes(listaClubes &lista);
+
+void MostrarEnPantallaPuntosPorJugador (listaPJ &lista);
 
 void MostrarEnPantallaJugadoresPorEquipo(listaJxE &lista);
 

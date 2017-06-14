@@ -17,3 +17,15 @@ int getFecha(puntajesPorJugador &puntajesPorJugador){
 int getPuntos(puntajesPorJugador &puntajesPorJugador){
     return puntajesPorJugador.puntos;
 }
+
+void setIdJugador(puntajesPorJugador &puntajesPorJugador, int id){
+    puntajesPorJugador.idJugador=id;
+}
+
+void setFecha(puntajesPorJugador &puntajesPorJugador, int fecha){
+    puntajesPorJugador.fecha=fecha;
+}
+
+void setPuntos(puntajesPorJugador &puntajesPorJugador,int puntos){
+    puntajesPorJugador.puntos=puntos;
+}
