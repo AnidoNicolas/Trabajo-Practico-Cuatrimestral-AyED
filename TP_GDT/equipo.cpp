@@ -1,14 +1,13 @@
 #include "equipo.h"
 
-
 void crear(Equipo &equipo){
 
     equipo.id=0;
     equipo.nombre= "x";
     equipo.nombreUsuario= "x";
-    ListaJugador jugadores;
-    crearLista(jugadores);
-    equipo.jugadores=&jugadores;
+    ListaJugador* listaj =new ListaJugador;
+    crearLista(*listaj);
+    equipo.jugadores=listaj;
     equipo.puntajeFecha=0;
     equipo.puntajeTotal=0;
 }

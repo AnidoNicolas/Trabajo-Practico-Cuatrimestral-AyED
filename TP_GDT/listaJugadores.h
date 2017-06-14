@@ -22,6 +22,14 @@ enum ResultadoComparacion {
 };
 
 #endif // __RESULTADOCOMPARACION__
+#ifndef __ATRIVUTOCOMPARACION__
+#define __ATRIVUTOCOMPARACION__
+enum AtrivutoComparacion{
+ID,
+FECHA,
+TOTAL
+};
+#endif // __ATRIVUTOCOMPARACION__
 
 /* Tipo de Informacion que esta contenida en los Nodos de la
    Lista, identificada como Dato. */

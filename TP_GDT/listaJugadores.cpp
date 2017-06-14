@@ -21,11 +21,28 @@
   return resultado de comparar dato1 respecto de dato2.
 */
 
-ResultadoComparacion compararDato(Dato dato1, Dato dato2) {
-    if (dato1.puntajeFecha > dato2.puntajeFecha) {
+ResultadoComparacion compararDato(Dato dato1, Dato dato2, AtrivutoComparacion atrivuto) {
+int atrivuto1,atrivuto2;
+    switch(atrivuto){
+    case ID:
+        atrivuto1=dato1.id;
+        atrivuto2=dato2.id;
+        break;
+    case FECHA:
+        atrivuto1=dato1.puntajeFecha;
+        atrivuto2=dato2.puntajeFecha;
+        break;
+    case TOTAL:
+        atrivuto1=dato1.puntajeTotal;
+        atrivuto2=dato2.puntajeTotal;
+        break;
+
+    }
+
+    if (atrivuto1 > atrivuto2) {
         return MAYOR;
     }
-    else if (dato1.puntajeFecha < dato2.puntajeFecha) {
+    else if (atrivuto1 < atrivuto2) {
         return MENOR;
     }
     else {
@@ -229,7 +246,7 @@ PtrNodoLista localizarDato(ListaJugador &lista, Dato dato) {
 
     /* obtiene el dato del nodo y lo compara */
     obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == IGUAL)
+    if (compararDato(datoCursor,dato,ID) == IGUAL)
       encontrado = true;
     else
       ptrCursor = siguiente(lista,ptrCursor);
@@ -264,7 +281,7 @@ PtrNodoLista insertarDato(ListaJugador &lista, Dato dato) {
   while ((ptrCursor != finJugadores()) && (! ubicado)) {
 
     obtenerDato(lista,datoCursor,ptrCursor);
-    if (compararDato(datoCursor,dato) == MAYOR)
+    if (compararDato(datoCursor,dato,ID) == MAYOR)
       ubicado = true;
 
     else {
