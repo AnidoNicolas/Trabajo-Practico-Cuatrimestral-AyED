@@ -138,9 +138,9 @@ void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores){
     Jugador jugadorAux;
     crear(jugadorAux);
     int fechaAcutal=0;
+    int c=0;
     while(cursorPJ != finPJ()){
         fechaAcutal=getFecha(cursorPJ->dato);
-        getchar();
         while((fechaAcutal==getFecha(cursorPJ->dato)) && (cursorPJ!= finPJ())){
             setId(jugadorAux, getIdJugador(cursorPJ->dato));
             cursorJ=localizarDato(jugadores,jugadorAux);
@@ -156,18 +156,20 @@ void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores){
             }
             cursorPJ= siguiente(pj,cursorPJ);
         }
-        cursorPJ=finPJ();// tuve q ponerlo para q corte el bucle
+      // if(fechaAcutal==2) cursorPJ=finPJ();// tuve q ponerlo para q corte el bucle
         ordenarEquiposPorAtrivuto(equipos,FECHA);
-
+        cout<<fechaAcutal;
         escribirArchivoFecha(equipos,fechaAcutal);
         setearPuntajesFecha(equipos);
     }
-//    escribirArchivoTotalEquipo();
-//    escribirArchivoTotalJugador();
+    ordenarEquiposPorAtrivuto(equipos,TOTAL);
+    escribirArchivoTotalEquipo(equipos);
+    ordenarJugadorPorAtrivuto(jugadores,TOTAL);
+    escribirArchivoTotalJugador(jugadores);
 }
 
 void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual){
-    char principio[15]="archivoFecha_";
+    char principio[15]="archivoFecha ";
     char fin[5]=".txt";
     char fecha[3];
     itoa(fechaAcual,fecha,10);
@@ -175,8 +177,6 @@ void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual){
     strcat(nombreArchivo,principio);
     strcat(nombreArchivo,fecha);
     strcat(nombreArchivo,fin);
-    getchar();
-    cout<< nombreArchivo;
     ofstream ffecha(nombreArchivo,ios::out);
     PtrNodoListaEquipo cursorE = primeroEquipo(equipos);
     int c=1;
@@ -186,6 +186,30 @@ void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual){
             cursorE= siguienteEquipo(equipos,cursorE);
     }
     ffecha.close();
+}
+
+void escribirArchivoTotalEquipo(ListaEquipo &equipos){
+    ofstream ftotalEquipo("puntajesTotalesPorEquipo.txt",ios::out);
+    PtrNodoListaEquipo cursorE = primeroEquipo(equipos);
+    int c=1;
+    while(cursorE!=finEquipo()){
+            ftotalEquipo<<c<<" "<<getId(cursorE->dato)<<" "<<getNombre(cursorE->dato)<<" "<<getNombreUsuario(cursorE->dato)<<" "<<getPuntajeTotal(cursorE->dato)<<endl;
+            c++;
+            cursorE= siguienteEquipo(equipos,cursorE);
+    }
+    ftotalEquipo.close();
+}
+
+void escribirArchivoTotalJugador(ListaJugador &jugadores){
+    ofstream ftotalJugador("puntajesTotalesPorJugador.txt",ios::out);
+    PtrNodoLista cursorJ = primero(jugadores);
+    int c=1;
+    while(cursorJ!=finJugadores()){
+            ftotalJugador<<c<<" "<<getId(cursorJ->dato)<<" "<<getPuntajeTotal(cursorJ->dato)<<endl;
+            c++;
+            cursorJ= siguiente(jugadores,cursorJ);
+    }
+    ftotalJugador.close();
 }
 
 void setearPuntajesFecha(ListaEquipo &equipos){
@@ -323,5 +347,40 @@ void intercambiarEquipo(cursor){
 */
 }
 
+void ordenarJugadorPorAtrivuto(ListaJugador &lista, AtrivutoComparacion atrivuto){
+ PtrNodoLista cursor=primero(lista);
+  Jugador jugador;
+  int i,j;
+  for(i=2;i<=longitud(lista);i++){
+    for(j=1;j<=longitud(lista)-1;j++){
+        switch(atrivuto){
+            case ID:
+                if(compararDato(cursor->dato,siguiente(lista,cursor)->dato,ID) == MENOR){
+                    jugador=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=jugador;
+                }
+                break;
+            case FECHA:
+                if(compararDato(cursor->dato,siguiente(lista,cursor)->dato,FECHA) == MENOR){
+                    jugador=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=jugador;
+                }
+                break;
+            case TOTAL:
+                if(compararDato(cursor->dato,siguiente(lista,cursor)->dato,TOTAL) == MENOR){
+                    jugador=cursor->dato;
+                    cursor->dato=cursor->sgte->dato;
+                    cursor->sgte->dato=jugador;
+                }
+                break;
+            }
+            cursor=siguiente(lista,cursor);
+        }
+        cursor=primero(lista);
+    }
+
+}
 
 

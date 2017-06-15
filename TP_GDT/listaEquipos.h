@@ -305,4 +305,5 @@ void reordenarEquipo(ListaEquipo &lista);
 int longitudEquipo(ListaEquipo &lista);
 
 ResultadoComparacion compararDatoEquipo(DatoEquipo dato1, DatoEquipo dato2, AtrivutoComparacion atrivuto);
+
 #endif // __LISTAEQUIPOS_H__

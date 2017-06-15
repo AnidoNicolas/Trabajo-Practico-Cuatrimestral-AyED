@@ -24,6 +24,10 @@ void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores);
 
 void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual);
 
+void escribirArchivoTotalEquipo(ListaEquipo &equipos);
+
+void escribirArchivoTotalJugador(ListaJugador &jugadores);
+
 void setearPuntajesFecha(ListaEquipo &equipos);
 
 void MostrarEnPantallaEquipos (ListaEquipo &lista);
@@ -39,6 +43,8 @@ void MostrarEnPantallaPuntosPorJugador (listaPJ &lista);
 void MostrarEnPantallaJugadoresPorEquipo(listaJxE &lista);
 
 void ordenarEquiposPorAtrivuto(ListaEquipo &lista, AtrivutoComparacion atrivuto);
+
+void ordenarJugadorPorAtrivuto(ListaJugador &lista,AtrivutoComparacion atrivuto);
 
 void intercambiarEquipo(PtrNodoListaEquipo cursor);
 

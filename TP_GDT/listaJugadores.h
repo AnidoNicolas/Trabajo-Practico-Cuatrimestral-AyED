@@ -306,6 +306,9 @@ void reordenar(ListaJugador &lista);
   lista : lista sobre la cual se invoca la primitiva.
 */
 int longitud(ListaJugador &lista);
+
+ResultadoComparacion compararDato(Dato dato1, Dato dato2, AtrivutoComparacion atrivuto);
+
 #endif // __LISTAJUGADORES_H__
 
 
