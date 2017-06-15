@@ -32,7 +32,7 @@ int getId(Equipo &equipo);
 PRE:
     La instancia del TDA debe haberse creado con anterioridad (primitiva crear) y nunca se ejecutó la primitiva destruir sobre esta instancia.
 POST:
-    devuelve el nombre de la direccion de memoria.
+    devuelve el nombre que esta en la direccion de memoria.
 */
 char* getNombre(Equipo &equipo);
 
@@ -40,7 +40,7 @@ char* getNombre(Equipo &equipo);
 PRE:
     La instancia del TDA debe haberse creado con anterioridad (primitiva crear) y nunca se ejecutó la primitiva destruir sobre esta instancia.
 POST:
-    devuelve el nombre de usuario de la direccion de memoria.
+    devuelve el nombre de usuario que esta en la direccion de memoria.
 */
 char* getNombreUsuario(Equipo &equipo);
 
