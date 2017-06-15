@@ -80,6 +80,7 @@ void validaciones(ListaEquipo &listaE){
         contarDEF=0;
         contarMED=0;
         contarDEL=0;
+        valorT=0;
         cursorE = siguienteEquipo(listaE,cursorE);
     }
 
