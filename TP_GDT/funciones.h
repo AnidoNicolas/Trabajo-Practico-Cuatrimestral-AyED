@@ -8,6 +8,10 @@
 #ifndef __FUNCIONES_H__
 #define __FUNCIONES_H__
 
+void validaciones(ListaEquipo &listaE);
+
+void escribirError(char* error);
+
 void cargarClubes(listaClubes &lista);
 
 void cargarEquipos(ListaEquipo &lista);
