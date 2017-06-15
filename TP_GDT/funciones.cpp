@@ -7,6 +7,83 @@
 
 using namespace std;
 
+void escribirError(char* error){
+ //no aplicado aun   
+} 
+
+void validaciones(ListaEquipo &listaE){
+    char* error;
+    int contarARQ=0,contarDEF=0,contarMED=0,contarDEL=0,valorT=0;
+    PtrNodoListaEquipo cursorE=primeroEquipo(listaE);
+    PtrNodoLista cursorJ;
+    DatoEquipo datoE;
+    Dato datoJ;
+    Configuracion config;
+    setConfiguracion(config);
+    //cout<<"Prueba del recorrido de lista:"<<endl;
+    while(cursorE!=finEquipo()){
+        obtenerDatoEquipo(listaE,datoE,cursorE);
+        cursorJ=primero(*datoE.jugadores);
+        //cout<<"Prueba recorrida Equipo: "<<datoE.nombreUsuario<<endl;
+        while(cursorJ!=finJugadores()){
+            obtenerDato(*datoE.jugadores,datoJ,cursorJ);
+            //cout<<"Prueba recorrida lista jugadores"<<endl;
+            //cout<<"Jugador: "<<datoJ.nombre<<endl;
+            if(getPosicion(datoJ)==ARQ){
+                contarARQ=contarARQ+1;
+            }
+            if(getPosicion(datoJ)==DEF){
+                contarDEF=contarDEF+1;
+            }
+            if(getPosicion(datoJ)==MED){
+                contarMED=contarMED+1;
+            }
+            if(getPosicion(datoJ)==DEL){
+                contarDEL=contarDEL+1;
+            }
+            valorT=valorT+datoJ.precio;
+            cursorJ = siguiente(*getJugadores(datoE),cursorJ);
+        }
+        if(contarARQ>getARQ(config)){
+            strcpy(error,"Cantidad de arqueros disponible superada");
+            cout<<"Cantidad de arqueros disponible superada"<<endl;
+            cout<<"El equipo "<<getNombre(datoE)<<" sera eliminado"<<endl;
+            escribirError(error);
+            eliminarNodoEquipo(listaE,cursorE);
+        }
+        if(contarDEF>getDEF(config)){
+            strcpy(error,"Cantidad de defensores disponible superada");
+            cout<<"Cantidad de defensores disponible superada"<<endl;
+            cout<<"El equipo "<<getNombreUsuario(datoE)<<" sera eliminado"<<endl;
+            escribirError(error);
+            eliminarNodoEquipo(listaE,cursorE);
+        }
+
+        if(contarMED>getMED(config)){
+            strcpy(error,"Cantidad de mediocampistas disponible superada");
+            cout<<"Cantidad de mediocampistas disponible superada"<<endl;
+            cout<<"El equipo "<<getNombreUsuario(datoE)<<" sera eliminado"<<endl;
+            escribirError(error);
+            eliminarNodoEquipo(listaE,cursorE);
+        }
+
+        if(contarDEL>getDEL(config)){
+            strcpy(error,"Cantidad de delanteros disponible superada");
+            cout<<"Cantidad de delanteros disponible superada"<<endl;
+            cout<<"El equipo "<<getNombreUsuario(datoE)<<" sera eliminado"<<endl;
+            escribirError(error);
+            eliminarNodoEquipo(listaE,cursorE);
+        }
+        //cout<<"Cantidad de defensores en equipo "<<datoE.nombre<<" "<< contarDEF<<endl;
+        //cout<<"Valor total del equipo " <<datoE.nombreUsuario<<" "<< valorT<<endl;
+        contarARQ=0;
+        contarDEF=0;
+        contarMED=0;
+        contarDEL=0;
+        cursorE = siguienteEquipo(listaE,cursorE);
+    }
+
+}
 
 void cargarClubes(listaClubes &lista){
     char id[3];
