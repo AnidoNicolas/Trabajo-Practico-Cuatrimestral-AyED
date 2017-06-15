@@ -3,10 +3,16 @@
 #include "listaJugadoresPorEquipo.h"
 #include "listaJugadores.h"
 #include "listaPuntajesPorJugador.h"
+#include "configuracion.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #ifndef __FUNCIONES_H__
 #define __FUNCIONES_H__
+
+void escribirMenuPrincipal();
+
+void escribirMenuArchivos();
 
 void validaciones(ListaEquipo &listaE);
 

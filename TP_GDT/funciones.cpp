@@ -7,9 +7,17 @@
 
 using namespace std;
 
+void escribirMenuPrincipal(){
+    cout<<"menu"<<endl<<endl<<"1)Procesamiento de archivos"<<endl<<"2)Procesamiento de fechas"<<endl<<"3)Salir"<<endl;
+}
+
+void escribirMenuArchivos(){
+    cout<<endl<<endl<<"1)Cargar Clubes"<<endl<<"2)Cargar Jugadores"<<endl<<"3)Cargar Equipos"<<endl<<"4)Cargar Jugadores por equipo"<<endl;
+}
+
 void escribirError(char* error){
- //no aplicado aun   
-} 
+ //no aplicado aun
+}
 
 void validaciones(ListaEquipo &listaE){
     char* error;
@@ -157,6 +165,7 @@ void cologarJugadoresEnEquipos(listaJxE &jxe, ListaEquipo &equipos, ListaJugador
         adicionarFinal (*getJugadores(cursorEquipo->dato),cursorJugador->dato);
         cursorJxe = siguiente(jxe,cursorJxe);
     }
+
 }
 
 void cargarJugadores(ListaJugador &lista){
@@ -219,7 +228,7 @@ void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores){
     int c=0;
     while(cursorPJ != finPJ()){
         fechaAcutal=getFecha(cursorPJ->dato);
-        while((fechaAcutal==getFecha(cursorPJ->dato)) && (cursorPJ!= finPJ())){
+        while((cursorPJ!= finPJ()) && (fechaAcutal==getFecha(cursorPJ->dato))){
             setId(jugadorAux, getIdJugador(cursorPJ->dato));
             cursorJ=localizarDato(jugadores,jugadorAux);
             setPuntajeTotal(cursorJ->dato,getPuntajeTotal(cursorJ->dato) + getPuntos(cursorPJ->dato));
@@ -232,11 +241,9 @@ void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores){
                 }
                 cursorE= siguienteEquipo(equipos, cursorE);
             }
-            cursorPJ= siguiente(pj,cursorPJ);
+        cursorPJ= siguiente(pj,cursorPJ);
         }
-      // if(fechaAcutal==2) cursorPJ=finPJ();// tuve q ponerlo para q corte el bucle
         ordenarEquiposPorAtrivuto(equipos,FECHA);
-        cout<<fechaAcutal;
         escribirArchivoFecha(equipos,fechaAcutal);
         setearPuntajesFecha(equipos);
     }

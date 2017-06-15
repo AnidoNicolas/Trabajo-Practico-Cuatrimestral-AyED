@@ -1,6 +1,10 @@
 #ifndef __CONFIGURACION_H__
 #define __CONFIGURACON_H__
 
+
+#ifndef confi
+#define confi
+
 struct Configuracion{
     int ValorMaximoXEquipo;
     int ARQ;
@@ -8,6 +12,7 @@ struct Configuracion{
     int MED;
     int DEL;
 };
+#endif // confi
 
 /*
     Pre: El TDA no debe haber sido creado
