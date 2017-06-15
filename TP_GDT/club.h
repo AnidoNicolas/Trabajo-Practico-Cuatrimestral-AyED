@@ -50,7 +50,7 @@ void setId(Club &club, int id);
 PRE:
     La instancia del TDA debe haberse creado con anterioridad (primitiva crear) y nunca se ejecutó la primitiva destruir sobre esta instancia.
 POST:
-    Asigna el valor de nombre de una direccion de memoria  a la instancia.
+    Asigna el valor de nombre  a la instancia.
 */
 void setNombre(Club &club, char* nombre);
 
