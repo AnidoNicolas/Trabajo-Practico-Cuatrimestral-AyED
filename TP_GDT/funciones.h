@@ -22,6 +22,10 @@ void cologarJugadoresEnEquipos(listaJxE &jxe, ListaEquipo &equipos, ListaJugador
 
 void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores);
 
+void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual);
+
+void setearPuntajesFecha(ListaEquipo &equipos);
+
 void MostrarEnPantallaEquipos (ListaEquipo &lista);
 
 void MostrarEnPantallaEquiposConJugadores (ListaEquipo &lista);

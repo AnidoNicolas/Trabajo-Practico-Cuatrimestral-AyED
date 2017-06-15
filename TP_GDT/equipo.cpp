@@ -41,13 +41,17 @@ void setId(Equipo &equipo,int id){
 }
 
 void setNombre (Equipo &equipo, char*nombre){
-    equipo.nombreUsuario=nombre;
+    equipo.nombre=nombre;
 }
 
 void setNombreUsuario (Equipo &equipo, char*nombre){
-    equipo.nombre=nombre;
+    equipo.nombreUsuario=nombre;
 }
 
 void setPuntajeFecha(Equipo &equipo,int puntaje){
     equipo.puntajeFecha=puntaje;
+}
+
+void setPuntajeTotal(Equipo &equipo, int puntaje){
+    equipo.puntajeTotal=puntaje;
 }

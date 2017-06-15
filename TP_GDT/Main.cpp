@@ -50,8 +50,11 @@ ordenarEquiposPorAtrivuto(equipos,FECHA);
 */
 
 cologarJugadoresEnEquipos(jxe,equipos,jugadores);
-
 MostrarEnPantallaEquiposConJugadores(equipos);
+cout<<endl;
+
+procesarFechas(pxj,equipos,jugadores);
+
 
 
 

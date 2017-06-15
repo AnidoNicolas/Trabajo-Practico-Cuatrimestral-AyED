@@ -71,7 +71,6 @@ void cologarJugadoresEnEquipos(listaJxE &jxe, ListaEquipo &equipos, ListaJugador
     crear(equipoAux);
     Jugador jugadorAux;
     crear(jugadorAux);
-    int c=0;
     while(cursorJxe!=finJxE()){
         setId(equipoAux,getidEquipo(cursorJxe->dato));
         PtrNodoListaEquipo cursorEquipo= localizarDatoEquipo(equipos,equipoAux);
@@ -132,7 +131,69 @@ void cargarPuntosPorJugador (listaPJ &lista){
 
 void procesarFechas(listaPJ &pj, ListaEquipo &equipos,ListaJugador &jugadores){
     PtrNodoListaPJ cursorPJ= primero(pj);
+    PtrNodoLista cursorJ;
+    PtrNodoListaEquipo cursorE;
+    Equipo equipoAux;
+    crear(equipoAux);
+    Jugador jugadorAux;
+    crear(jugadorAux);
+    int fechaAcutal=0;
+    while(cursorPJ != finPJ()){
+        fechaAcutal=getFecha(cursorPJ->dato);
+        getchar();
+        while((fechaAcutal==getFecha(cursorPJ->dato)) && (cursorPJ!= finPJ())){
+            setId(jugadorAux, getIdJugador(cursorPJ->dato));
+            cursorJ=localizarDato(jugadores,jugadorAux);
+            setPuntajeTotal(cursorJ->dato,getPuntajeTotal(cursorJ->dato) + getPuntos(cursorPJ->dato));
+            cursorE=primeroEquipo(equipos);
+            while(cursorE!=finEquipo()){
+                cursorJ=localizarDato(*getJugadores(cursorE->dato),jugadorAux);
+                if(cursorJ!=finJugadores()){
+                    setPuntajeFecha(cursorE->dato,getPuntajeFecha(cursorE->dato) + getPuntos(cursorPJ->dato));
+                    setPuntajeTotal(cursorE->dato,getPuntajeTotal(cursorE->dato) + getPuntos(cursorPJ->dato));
+                }
+                cursorE= siguienteEquipo(equipos, cursorE);
+            }
+            cursorPJ= siguiente(pj,cursorPJ);
+        }
+        cursorPJ=finPJ();// tuve q ponerlo para q corte el bucle
+        ordenarEquiposPorAtrivuto(equipos,FECHA);
 
+        escribirArchivoFecha(equipos,fechaAcutal);
+        setearPuntajesFecha(equipos);
+    }
+//    escribirArchivoTotalEquipo();
+//    escribirArchivoTotalJugador();
+}
+
+void escribirArchivoFecha(ListaEquipo &equipos, int fechaAcual){
+    char principio[15]="archivoFecha_";
+    char fin[5]=".txt";
+    char fecha[3];
+    itoa(fechaAcual,fecha,10);
+    char nombreArchivo[22];
+    strcat(nombreArchivo,principio);
+    strcat(nombreArchivo,fecha);
+    strcat(nombreArchivo,fin);
+    getchar();
+    cout<< nombreArchivo;
+    ofstream ffecha(nombreArchivo,ios::out);
+    PtrNodoListaEquipo cursorE = primeroEquipo(equipos);
+    int c=1;
+    while(cursorE!=finEquipo()){
+            ffecha<<c<<" "<<getId(cursorE->dato)<<" "<<getNombre(cursorE->dato)<<" "<<getNombreUsuario(cursorE->dato)<<" "<<getPuntajeFecha(cursorE->dato)<<endl;
+            c++;
+            cursorE= siguienteEquipo(equipos,cursorE);
+    }
+    ffecha.close();
+}
+
+void setearPuntajesFecha(ListaEquipo &equipos){
+    PtrNodoListaEquipo cursorE= primeroEquipo(equipos);
+    while(cursorE!=finEquipo()){
+        setPuntajeFecha(cursorE->dato,0);
+        cursorE=siguienteEquipo(equipos,cursorE);
+    }
 }
 
 void MostrarEnPantallaEquipos (ListaEquipo &lista){
