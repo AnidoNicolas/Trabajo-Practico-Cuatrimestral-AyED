@@ -1,0 +1,121 @@
+#include "funciones.h"
+#include "configuracion.h"
+#include "listaClubes.h"
+#include "listaJugadores.h"
+#include "listaEquipos.h"
+#include "listaPuntajesPorJugador.h"
+
+
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int opc=0,senial=1;
+    char opc2;
+    Configuracion config;
+    crear(config);
+    setConfiguracion(config);
+    listaClubes clubes;
+    crearLista(clubes);
+    ListaJugador jugadores;
+    crearLista(jugadores);
+    listaJxE jxe;
+    crearLista(jxe);
+    listaPJ pxj;
+    crearLista(pxj);
+// verifico q se setearon los valores mostrandolos por pantalla
+//cout << getValorMaximoXEquipo(config)<<endl<<getARQ(config)<<endl<<getDEF(config)<<endl<<getMED(config)<<endl<<getDEL(config)<<endl
+    ListaEquipo equipos;
+    crearListaEquipo(equipos);
+while(senial==1){
+    cout<<"                 Aplicacion Gran DT\n\n"<<endl;
+    cout<<"Escoja la operacion a realizar: "<<endl;
+    cout<<"1. Carga de archivos"<< endl;
+    cout<<"2. Visualizacion de datos"<<endl;
+    cout<<"3. Mostrar Rankings"<<endl;
+
+    cin>>opc;
+
+    switch(opc) //donde opción es la variable a comparar
+    {
+        case 1: //Bloque de instrucciones 1;
+
+            cargarEquipos(equipos);
+            cout<<"Archivo de equipos cargado!"<<endl;
+            cargarClubes(clubes);
+            cout<<"Archivo de clubes cargado!"<<endl;
+            cargarJugadores(jugadores);
+            cout<<"Archivo de jugadores cargado!"<<endl;
+            cargarJugadoresPorEquipo(jxe);
+            cout<<"Archivo de jugadores por equipos cargado!"<<endl;
+            cargarPuntosPorJugador(pxj);
+            cout<<"Archivo de puntos por jugador cargado!"<<endl;
+            cologarJugadoresEnEquipos(jxe,equipos,jugadores);
+            break;
+        case 2: //Bloque de instrucciones 2;
+            opc=0;
+            system("cls");
+            cout<<"Que dato desea visualizar?:"<<endl;
+            cout<<"1. Equipos"<<endl;
+            cout<<"2. Clubes"<<endl;
+            cout<<"3. Jugadores"<<endl;
+            cout<<"4. Jugadores por equipo"<<endl;
+            cout<<"5. Puntajes por jugador"<<endl;
+            cout<<"6. Equipos con jugadores"<<endl;
+            cin>>opc;
+            if(opc==1){
+                MostrarEnPantallaEquipos(equipos);
+                cout<<endl;
+            }
+            if(opc==2){
+                MostrarEnPantallaClubes(clubes);
+                cout<<endl;
+            }
+            if(opc==3){
+                MostrarEnPantallaJugadores(jugadores);
+                cout<<endl;
+            }
+            if(opc==4){
+                MostrarEnPantallaJugadoresPorEquipo(jxe);
+                cout<<endl;
+            }
+            if(opc==5){
+                MostrarEnPantallaPuntosPorJugador(pxj);
+                cout<<endl;
+            }
+            if(opc==6){
+                MostrarEnPantallaEquiposConJugadores(equipos);
+                cout<<endl;
+            }
+            break;
+        case 3:
+            opc=0;
+            procesarFechas(pxj,equipos,jugadores);
+            cout<<"Que ranking desea ver?"<<endl;
+            cout<<"1. Ranking jugadores"<<endl;
+            cout<<"2. Ranking equipos"<<endl;
+            cin>>opc;
+            if(opc==1){
+                MostrarEnPantallaJugadores(jugadores);
+            }
+            if(opc==2){
+                MostrarEnPantallaEquipos(equipos);
+            }
+            break;
+    }
+    opc=0;
+    cout<<"Desea realizar otra operacion? S/N"<<endl;
+    cin>>opc2;
+    if(opc=='n' || opc=='N'){
+        cout<<"Gracias por utilizar el sistema!" <<endl;
+        senial=0;
+        return 0;
+    }
+
+    else{
+            opc=0;
+        system("cls");
+    }
+
+}
