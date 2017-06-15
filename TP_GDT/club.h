@@ -34,7 +34,7 @@ int getIdClub(Club &club);
 PRE:
     La instancia del TDA debe haberse creado con anterioridad (primitiva crear) y nunca se ejecutó la primitiva destruir sobre esta instancia.
 POST:
-    devuelve el nombre a la direccion de memoria.
+    devuelve el nombre que esta en la direccion de memoria.
 */
 char* getNombre(Club &club);
 
