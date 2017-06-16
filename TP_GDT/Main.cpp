@@ -51,6 +51,7 @@ while(bandera==0){
                 b1=1;
                 cout<<endl<<"Clubes cargados";
                 getchar();
+                getchar();
                 break;
             case 2:
                 cargarJugadores(jugadores);
@@ -59,6 +60,7 @@ while(bandera==0){
                 system("cls");
                 b2=1;
                 cout<<endl<<"Jugadores cargados";
+                getchar();
                 getchar();
                 break;
             case 3:
@@ -69,6 +71,7 @@ while(bandera==0){
                 b3=1;
                 cout<<endl<<"Equipos cargados";
                 getchar();
+                getchar();
                 break;
             case 4:
                 cargarJugadoresPorEquipo(jxe);
@@ -78,15 +81,18 @@ while(bandera==0){
                 b4=1;
                 cout<<endl<<"Jugadores por equipo cargados";
                 getchar();
+                getchar();
                 break;
             default:
                 system("cls");
                 cout<<endl<<"Opcion incorrecta ";
                 getchar();
+                getchar();
         }
 
         }
     break;
+
     case 2:
         system("cls");
 
@@ -100,6 +106,7 @@ while(bandera==0){
 
         procesarFechas(pxj,equipos,jugadores);
         cout<<"fechas procesadas!!";
+        getchar();
         getchar();
         break;
     case 3:
