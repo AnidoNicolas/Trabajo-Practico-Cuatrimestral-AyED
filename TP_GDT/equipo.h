@@ -44,6 +44,10 @@ POST:
 */
 char* getNombreUsuario(Equipo &equipo);
 
+/*
+  pre : la lista fue creada con crearLista().
+  post : devuelve los jugadores de equipo que tiene la lista.
+*/
 ListaJugador* getJugadores(Equipo &equipo);
 
 /**
