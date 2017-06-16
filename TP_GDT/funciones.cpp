@@ -16,7 +16,10 @@ void escribirMenuArchivos(){
 }
 
 void escribirError(char* error){
- //no aplicado aun
+ ofstream fErrores;
+ fErrores.open ("errores.txt");
+ fErrores << "Descripcion: "<< error <<";"<<endl;
+ fErrores.close();
 }
 
 void validaciones(ListaEquipo &listaE){
