@@ -25,8 +25,8 @@ post:
 */
 void validaciones(ListaEquipo &listaE);
 /*
-pre:
-post:
+pre:Se debe haber creado la lista de equipos con la carga de sus respectivos jugadores ya realizada, y no debe haber sido eliminada.
+post: Validacion de los equipos que cumplen con las condiciones establecidas en el archivo de configuracion.db
 */
 void escribirError(char* error);
 /*
